@@ -9,55 +9,27 @@ import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
-import { KarzaPanList } from "./karzaPan/KarzaPanList";
-import { KarzaPanCreate } from "./karzaPan/KarzaPanCreate";
-import { KarzaPanEdit } from "./karzaPan/KarzaPanEdit";
-import { KarzaPanShow } from "./karzaPan/KarzaPanShow";
-import { KarzaEmploymentList } from "./karzaEmployment/KarzaEmploymentList";
-import { KarzaEmploymentCreate } from "./karzaEmployment/KarzaEmploymentCreate";
-import { KarzaEmploymentEdit } from "./karzaEmployment/KarzaEmploymentEdit";
-import { KarzaEmploymentShow } from "./karzaEmployment/KarzaEmploymentShow";
-import { HyperVergeAadhaarList } from "./hyperVergeAadhaar/HyperVergeAadhaarList";
-import { HyperVergeAadhaarCreate } from "./hyperVergeAadhaar/HyperVergeAadhaarCreate";
-import { HyperVergeAadhaarEdit } from "./hyperVergeAadhaar/HyperVergeAadhaarEdit";
-import { HyperVergeAadhaarShow } from "./hyperVergeAadhaar/HyperVergeAadhaarShow";
-import { KarzaAdhaarVerifyList } from "./karzaAdhaarVerify/KarzaAdhaarVerifyList";
-import { KarzaAdhaarVerifyCreate } from "./karzaAdhaarVerify/KarzaAdhaarVerifyCreate";
-import { KarzaAdhaarVerifyEdit } from "./karzaAdhaarVerify/KarzaAdhaarVerifyEdit";
-import { KarzaAdhaarVerifyShow } from "./karzaAdhaarVerify/KarzaAdhaarVerifyShow";
-import { KarzaVerifyAdhaarList } from "./karzaVerifyAdhaar/KarzaVerifyAdhaarList";
-import { KarzaVerifyAdhaarCreate } from "./karzaVerifyAdhaar/KarzaVerifyAdhaarCreate";
-import { KarzaVerifyAdhaarEdit } from "./karzaVerifyAdhaar/KarzaVerifyAdhaarEdit";
-import { KarzaVerifyAdhaarShow } from "./karzaVerifyAdhaar/KarzaVerifyAdhaarShow";
-import { HyperVergeKycFailureHistoryList } from "./hyperVergeKycFailureHistory/HyperVergeKycFailureHistoryList";
-import { HyperVergeKycFailureHistoryCreate } from "./hyperVergeKycFailureHistory/HyperVergeKycFailureHistoryCreate";
-import { HyperVergeKycFailureHistoryEdit } from "./hyperVergeKycFailureHistory/HyperVergeKycFailureHistoryEdit";
-import { HyperVergeKycFailureHistoryShow } from "./hyperVergeKycFailureHistory/HyperVergeKycFailureHistoryShow";
-import { HyperVergeOtpList } from "./hyperVergeOtp/HyperVergeOtpList";
-import { HyperVergeOtpCreate } from "./hyperVergeOtp/HyperVergeOtpCreate";
-import { HyperVergeOtpEdit } from "./hyperVergeOtp/HyperVergeOtpEdit";
-import { HyperVergeOtpShow } from "./hyperVergeOtp/HyperVergeOtpShow";
-import { HyperVergeKycSuccessList } from "./hyperVergeKycSuccess/HyperVergeKycSuccessList";
-import { HyperVergeKycSuccessCreate } from "./hyperVergeKycSuccess/HyperVergeKycSuccessCreate";
-import { HyperVergeKycSuccessEdit } from "./hyperVergeKycSuccess/HyperVergeKycSuccessEdit";
-import { HyperVergeKycSuccessShow } from "./hyperVergeKycSuccess/HyperVergeKycSuccessShow";
-import { KnowlarityMakeCallList } from "./knowlarityMakeCall/KnowlarityMakeCallList";
-import { KnowlarityMakeCallCreate } from "./knowlarityMakeCall/KnowlarityMakeCallCreate";
-import { KnowlarityMakeCallEdit } from "./knowlarityMakeCall/KnowlarityMakeCallEdit";
-import { KnowlarityMakeCallShow } from "./knowlarityMakeCall/KnowlarityMakeCallShow";
-import { ExperianCreditBureauList } from "./experianCreditBureau/ExperianCreditBureauList";
-import { ExperianCreditBureauCreate } from "./experianCreditBureau/ExperianCreditBureauCreate";
-import { ExperianCreditBureauEdit } from "./experianCreditBureau/ExperianCreditBureauEdit";
-import { ExperianCreditBureauShow } from "./experianCreditBureau/ExperianCreditBureauShow";
-import { KarzaCustomerDetailList } from "./karzaCustomerDetail/KarzaCustomerDetailList";
-import { KarzaCustomerDetailCreate } from "./karzaCustomerDetail/KarzaCustomerDetailCreate";
-import { KarzaCustomerDetailEdit } from "./karzaCustomerDetail/KarzaCustomerDetailEdit";
-import { KarzaCustomerDetailShow } from "./karzaCustomerDetail/KarzaCustomerDetailShow";
-import { CashfreePaymentGatewayList } from "./cashfreePaymentGateway/CashfreePaymentGatewayList";
-import { CashfreePaymentGatewayCreate } from "./cashfreePaymentGateway/CashfreePaymentGatewayCreate";
-import { CashfreePaymentGatewayEdit } from "./cashfreePaymentGateway/CashfreePaymentGatewayEdit";
-import { CashfreePaymentGatewayShow } from "./cashfreePaymentGateway/CashfreePaymentGatewayShow";
-import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
+import { UserDetailList } from "./userDetail/UserDetailList";
+import { UserDetailCreate } from "./userDetail/UserDetailCreate";
+import { UserDetailEdit } from "./userDetail/UserDetailEdit";
+import { UserDetailShow } from "./userDetail/UserDetailShow";
+import { UserOnboardingStateList } from "./userOnboardingState/UserOnboardingStateList";
+import { UserOnboardingStateCreate } from "./userOnboardingState/UserOnboardingStateCreate";
+import { UserOnboardingStateEdit } from "./userOnboardingState/UserOnboardingStateEdit";
+import { UserOnboardingStateShow } from "./userOnboardingState/UserOnboardingStateShow";
+import { CreditBureauDetailList } from "./creditBureauDetail/CreditBureauDetailList";
+import { CreditBureauDetailCreate } from "./creditBureauDetail/CreditBureauDetailCreate";
+import { CreditBureauDetailEdit } from "./creditBureauDetail/CreditBureauDetailEdit";
+import { CreditBureauDetailShow } from "./creditBureauDetail/CreditBureauDetailShow";
+import { EmploymentDetailList } from "./employmentDetail/EmploymentDetailList";
+import { EmploymentDetailCreate } from "./employmentDetail/EmploymentDetailCreate";
+import { EmploymentDetailEdit } from "./employmentDetail/EmploymentDetailEdit";
+import { EmploymentDetailShow } from "./employmentDetail/EmploymentDetailShow";
+import { AddressDetailList } from "./addressDetail/AddressDetailList";
+import { AddressDetailCreate } from "./addressDetail/AddressDetailCreate";
+import { AddressDetailEdit } from "./addressDetail/AddressDetailEdit";
+import { AddressDetailShow } from "./addressDetail/AddressDetailShow";
+import { httpAuthProvider } from "./auth-provider/ra-auth-http";
 
 const App = (): React.ReactElement => {
   const [dataProvider, setDataProvider] = useState<DataProvider | null>(null);
@@ -76,9 +48,9 @@ const App = (): React.ReactElement => {
   return (
     <div className="App">
       <Admin
-        title={"Adapter service"}
+        title={"user-service"}
         dataProvider={dataProvider}
-        authProvider={jwtAuthProvider}
+        authProvider={httpAuthProvider}
         theme={theme}
         dashboard={Dashboard}
         loginPage={Login}
@@ -91,88 +63,39 @@ const App = (): React.ReactElement => {
           show={UserShow}
         />
         <Resource
-          name="KarzaPan"
-          list={KarzaPanList}
-          edit={KarzaPanEdit}
-          create={KarzaPanCreate}
-          show={KarzaPanShow}
+          name="UserDetail"
+          list={UserDetailList}
+          edit={UserDetailEdit}
+          create={UserDetailCreate}
+          show={UserDetailShow}
         />
         <Resource
-          name="KarzaEmployment"
-          list={KarzaEmploymentList}
-          edit={KarzaEmploymentEdit}
-          create={KarzaEmploymentCreate}
-          show={KarzaEmploymentShow}
+          name="UserOnboardingState"
+          list={UserOnboardingStateList}
+          edit={UserOnboardingStateEdit}
+          create={UserOnboardingStateCreate}
+          show={UserOnboardingStateShow}
         />
         <Resource
-          name="HyperVergeAadhaar"
-          list={HyperVergeAadhaarList}
-          edit={HyperVergeAadhaarEdit}
-          create={HyperVergeAadhaarCreate}
-          show={HyperVergeAadhaarShow}
+          name="CreditBureauDetail"
+          list={CreditBureauDetailList}
+          edit={CreditBureauDetailEdit}
+          create={CreditBureauDetailCreate}
+          show={CreditBureauDetailShow}
         />
         <Resource
-          name="KarzaAdhaarVerify"
-          list={KarzaAdhaarVerifyList}
-          edit={KarzaAdhaarVerifyEdit}
-          create={KarzaAdhaarVerifyCreate}
-          show={KarzaAdhaarVerifyShow}
+          name="EmploymentDetail"
+          list={EmploymentDetailList}
+          edit={EmploymentDetailEdit}
+          create={EmploymentDetailCreate}
+          show={EmploymentDetailShow}
         />
         <Resource
-          name="KarzaVerifyAdhaar"
-          list={KarzaVerifyAdhaarList}
-          edit={KarzaVerifyAdhaarEdit}
-          create={KarzaVerifyAdhaarCreate}
-          show={KarzaVerifyAdhaarShow}
-        />
-        <Resource
-          name="HyperVergeKycFailureHistory"
-          list={HyperVergeKycFailureHistoryList}
-          edit={HyperVergeKycFailureHistoryEdit}
-          create={HyperVergeKycFailureHistoryCreate}
-          show={HyperVergeKycFailureHistoryShow}
-        />
-        <Resource
-          name="HyperVergeOtp"
-          list={HyperVergeOtpList}
-          edit={HyperVergeOtpEdit}
-          create={HyperVergeOtpCreate}
-          show={HyperVergeOtpShow}
-        />
-        <Resource
-          name="HyperVergeKycSuccess"
-          list={HyperVergeKycSuccessList}
-          edit={HyperVergeKycSuccessEdit}
-          create={HyperVergeKycSuccessCreate}
-          show={HyperVergeKycSuccessShow}
-        />
-        <Resource
-          name="KnowlarityMakeCall"
-          list={KnowlarityMakeCallList}
-          edit={KnowlarityMakeCallEdit}
-          create={KnowlarityMakeCallCreate}
-          show={KnowlarityMakeCallShow}
-        />
-        <Resource
-          name="ExperianCreditBureau"
-          list={ExperianCreditBureauList}
-          edit={ExperianCreditBureauEdit}
-          create={ExperianCreditBureauCreate}
-          show={ExperianCreditBureauShow}
-        />
-        <Resource
-          name="KarzaCustomerDetail"
-          list={KarzaCustomerDetailList}
-          edit={KarzaCustomerDetailEdit}
-          create={KarzaCustomerDetailCreate}
-          show={KarzaCustomerDetailShow}
-        />
-        <Resource
-          name="CashfreePaymentGateway"
-          list={CashfreePaymentGatewayList}
-          edit={CashfreePaymentGatewayEdit}
-          create={CashfreePaymentGatewayCreate}
-          show={CashfreePaymentGatewayShow}
+          name="AddressDetail"
+          list={AddressDetailList}
+          edit={AddressDetailEdit}
+          create={AddressDetailCreate}
+          show={AddressDetailShow}
         />
       </Admin>
     </div>
