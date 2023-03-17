@@ -26,39 +26,6 @@ class HyperVergeAadhaarUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  errorCode?: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  reqType?: string;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  hyperVergeStatus?: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
   errorMessage?: string | null;
 
   @ApiProperty({
@@ -113,6 +80,39 @@ class HyperVergeAadhaarUpdateInput {
     nullable: true,
   })
   adhaarNumber?: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  errorCode?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  reqType?: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  hyperVergeStatus?: string | null;
 }
 
 export { HyperVergeAadhaarUpdateInput as HyperVergeAadhaarUpdateInput };

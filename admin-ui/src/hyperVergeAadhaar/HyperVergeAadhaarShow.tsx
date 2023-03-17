@@ -11,9 +11,6 @@ export const HyperVergeAadhaarShow = (props: ShowProps): React.ReactElement => {
   return (
     <Show {...props}>
       <SimpleShowLayout>
-        <TextField label="errorCode" source="errorCode" />
-        <TextField label="reqType" source="reqType" />
-        <TextField label="hyperVergeStatus" source="hyperVergeStatus" />
         <TextField label="ID" source="id" />
         <DateField source="createdAt" label="Created At" />
         <DateField source="updatedAt" label="Updated At" />
@@ -23,6 +20,9 @@ export const HyperVergeAadhaarShow = (props: ShowProps): React.ReactElement => {
         <TextField label="httpStatusCode" source="httpStatusCode" />
         <TextField label="resPayload" source="resPayload" />
         <TextField label="adhaarNumber" source="adhaarNumber" />
+        <TextField label="errorCode" source="errorCode" />
+        <TextField label="reqType" source="reqType" />
+        <TextField label="hyperVergeStatus" source="hyperVergeStatus" />
       </SimpleShowLayout>
     </Show>
   );

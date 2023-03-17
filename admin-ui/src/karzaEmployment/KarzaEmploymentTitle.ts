@@ -1,7 +1,7 @@
 import { KarzaEmployment as TKarzaEmployment } from "../api/karzaEmployment/KarzaEmployment";
 
-export const KARZAEMPLOYMENT_TITLE_FIELD = "errorCode";
+export const KARZAEMPLOYMENT_TITLE_FIELD = "errorMessage";
 
 export const KarzaEmploymentTitle = (record: TKarzaEmployment): string => {
-  return record.errorCode || String(record.id);
+  return record.errorMessage || String(record.id);
 };

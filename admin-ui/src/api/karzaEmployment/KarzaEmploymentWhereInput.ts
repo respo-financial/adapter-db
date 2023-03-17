@@ -1,14 +1,12 @@
-import { StringFilter } from "../../util/StringFilter";
-import { JsonFilter } from "../../util/JsonFilter";
-import { IntFilter } from "../../util/IntFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { StringFilter } from "../../util/StringFilter";
+import { IntFilter } from "../../util/IntFilter";
 
 export type KarzaEmploymentWhereInput = {
-  id?: StringFilter;
-  reqPayload?: JsonFilter;
-  resPayload?: JsonFilter;
-  customerId?: IntFilter;
-  errorCode?: StringNullableFilter;
   errorMessage?: StringNullableFilter;
-  httpStatusCode?: StringNullableFilter;
+  httpStatusCode?: StringFilter;
+  karzaStatusCode?: StringNullableFilter;
+  id?: StringFilter;
+  customerId?: IntFilter;
+  karzaStatus?: StringNullableFilter;
 };

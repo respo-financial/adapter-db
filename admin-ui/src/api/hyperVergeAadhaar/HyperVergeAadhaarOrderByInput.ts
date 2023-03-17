@@ -1,9 +1,6 @@
 import { SortOrder } from "../../util/SortOrder";
 
 export type HyperVergeAadhaarOrderByInput = {
-  errorCode?: SortOrder;
-  reqType?: SortOrder;
-  hyperVergeStatus?: SortOrder;
   id?: SortOrder;
   createdAt?: SortOrder;
   updatedAt?: SortOrder;
@@ -13,4 +10,7 @@ export type HyperVergeAadhaarOrderByInput = {
   httpStatusCode?: SortOrder;
   resPayload?: SortOrder;
   adhaarNumber?: SortOrder;
+  errorCode?: SortOrder;
+  reqType?: SortOrder;
+  hyperVergeStatus?: SortOrder;
 };

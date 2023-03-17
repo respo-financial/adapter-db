@@ -26,36 +26,6 @@ class HyperVergeAadhaarCreateInput {
   @Field(() => String, {
     nullable: true,
   })
-  errorCode?: string | null;
-
-  @ApiProperty({
-    required: true,
-    type: String,
-  })
-  @IsString()
-  @Field(() => String)
-  reqType!: string;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  hyperVergeStatus?: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
   errorMessage?: string | null;
 
   @ApiProperty({
@@ -98,6 +68,36 @@ class HyperVergeAadhaarCreateInput {
   @IsString()
   @Field(() => String)
   adhaarNumber!: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  errorCode?: string | null;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  reqType!: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  hyperVergeStatus?: string | null;
 }
 
 export { HyperVergeAadhaarCreateInput as HyperVergeAadhaarCreateInput };

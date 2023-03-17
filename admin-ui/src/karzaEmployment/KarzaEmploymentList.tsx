@@ -12,15 +12,16 @@ export const KarzaEmploymentList = (props: ListProps): React.ReactElement => {
       pagination={<Pagination />}
     >
       <Datagrid rowClick="show">
+        <TextField label="resPayload" source="resPayload" />
+        <TextField label="errorMessage" source="errorMessage" />
+        <TextField label="httpStatusCode" source="httpStatusCode" />
+        <TextField label="reqPayload" source="reqPayload" />
+        <TextField label="karzaStatusCode" source="karzaStatusCode" />
         <TextField label="ID" source="id" />
         <DateField source="createdAt" label="Created At" />
         <DateField source="updatedAt" label="Updated At" />
-        <TextField label="reqPayload" source="reqPayload" />
-        <TextField label="resPayload" source="resPayload" />
-        <TextField label="CustomerId" source="customerId" />
-        <TextField label="errorCode" source="errorCode" />
-        <TextField label="errorMessage" source="errorMessage" />
-        <TextField label="httpStatusCode" source="httpStatusCode" />
+        <TextField label="customerId" source="customerId" />
+        <TextField label="karzaStatus" source="karzaStatus" />
       </Datagrid>
     </List>
   );

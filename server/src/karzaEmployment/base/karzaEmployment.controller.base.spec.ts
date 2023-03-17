@@ -19,42 +19,46 @@ import { KarzaEmploymentService } from "../karzaEmployment.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  errorMessage: "exampleErrorMessage",
+  httpStatusCode: "exampleHttpStatusCode",
+  karzaStatusCode: "exampleKarzaStatusCode",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
   customerId: 42,
-  errorCode: "exampleErrorCode",
-  errorMessage: "exampleErrorMessage",
-  httpStatusCode: "exampleHttpStatusCode",
+  karzaStatus: "exampleKarzaStatus",
 };
 const CREATE_RESULT = {
+  errorMessage: "exampleErrorMessage",
+  httpStatusCode: "exampleHttpStatusCode",
+  karzaStatusCode: "exampleKarzaStatusCode",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
   customerId: 42,
-  errorCode: "exampleErrorCode",
-  errorMessage: "exampleErrorMessage",
-  httpStatusCode: "exampleHttpStatusCode",
+  karzaStatus: "exampleKarzaStatus",
 };
 const FIND_MANY_RESULT = [
   {
+    errorMessage: "exampleErrorMessage",
+    httpStatusCode: "exampleHttpStatusCode",
+    karzaStatusCode: "exampleKarzaStatusCode",
     id: "exampleId",
     createdAt: new Date(),
     updatedAt: new Date(),
     customerId: 42,
-    errorCode: "exampleErrorCode",
-    errorMessage: "exampleErrorMessage",
-    httpStatusCode: "exampleHttpStatusCode",
+    karzaStatus: "exampleKarzaStatus",
   },
 ];
 const FIND_ONE_RESULT = {
+  errorMessage: "exampleErrorMessage",
+  httpStatusCode: "exampleHttpStatusCode",
+  karzaStatusCode: "exampleKarzaStatusCode",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
   customerId: 42,
-  errorCode: "exampleErrorCode",
-  errorMessage: "exampleErrorMessage",
-  httpStatusCode: "exampleHttpStatusCode",
+  karzaStatus: "exampleKarzaStatus",
 };
 
 const service = {

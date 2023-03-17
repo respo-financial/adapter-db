@@ -3,8 +3,8 @@ import {
   Edit,
   SimpleForm,
   EditProps,
-  NumberInput,
   TextInput,
+  NumberInput,
 } from "react-admin";
 
 export const KarzaEmploymentEdit = (props: EditProps): React.ReactElement => {
@@ -12,11 +12,12 @@ export const KarzaEmploymentEdit = (props: EditProps): React.ReactElement => {
     <Edit {...props}>
       <SimpleForm>
         <div />
-        <div />
-        <NumberInput step={1} label="CustomerId" source="customerId" />
-        <TextInput label="errorCode" source="errorCode" />
         <TextInput label="errorMessage" source="errorMessage" />
         <TextInput label="httpStatusCode" source="httpStatusCode" />
+        <div />
+        <TextInput label="karzaStatusCode" source="karzaStatusCode" />
+        <NumberInput step={1} label="customerId" source="customerId" />
+        <TextInput label="karzaStatus" source="karzaStatus" />
       </SimpleForm>
     </Edit>
   );

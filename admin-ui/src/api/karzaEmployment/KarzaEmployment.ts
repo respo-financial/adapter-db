@@ -1,13 +1,14 @@
 import { JsonValue } from "type-fest";
 
 export type KarzaEmployment = {
+  resPayload: JsonValue;
+  errorMessage: string | null;
+  httpStatusCode: string;
+  reqPayload: JsonValue;
+  karzaStatusCode: string | null;
   id: string;
   createdAt: Date;
   updatedAt: Date;
-  reqPayload: JsonValue;
-  resPayload: JsonValue;
   customerId: number;
-  errorCode: string | null;
-  errorMessage: string | null;
-  httpStatusCode: string | null;
+  karzaStatus: string | null;
 };

@@ -12,9 +12,6 @@ export const HyperVergeAadhaarList = (props: ListProps): React.ReactElement => {
       pagination={<Pagination />}
     >
       <Datagrid rowClick="show">
-        <TextField label="errorCode" source="errorCode" />
-        <TextField label="reqType" source="reqType" />
-        <TextField label="hyperVergeStatus" source="hyperVergeStatus" />
         <TextField label="ID" source="id" />
         <DateField source="createdAt" label="Created At" />
         <DateField source="updatedAt" label="Updated At" />
@@ -24,6 +21,9 @@ export const HyperVergeAadhaarList = (props: ListProps): React.ReactElement => {
         <TextField label="httpStatusCode" source="httpStatusCode" />
         <TextField label="resPayload" source="resPayload" />
         <TextField label="adhaarNumber" source="adhaarNumber" />
+        <TextField label="errorCode" source="errorCode" />
+        <TextField label="reqType" source="reqType" />
+        <TextField label="hyperVergeStatus" source="hyperVergeStatus" />
       </Datagrid>
     </List>
   );

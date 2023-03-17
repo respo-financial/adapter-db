@@ -19,9 +19,6 @@ import { HyperVergeAadhaarService } from "../hyperVergeAadhaar.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
-  errorCode: "exampleErrorCode",
-  reqType: "exampleReqType",
-  hyperVergeStatus: "exampleHyperVergeStatus",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -29,11 +26,11 @@ const CREATE_INPUT = {
   customerId: 42,
   httpStatusCode: "exampleHttpStatusCode",
   adhaarNumber: "exampleAdhaarNumber",
+  errorCode: "exampleErrorCode",
+  reqType: "exampleReqType",
+  hyperVergeStatus: "exampleHyperVergeStatus",
 };
 const CREATE_RESULT = {
-  errorCode: "exampleErrorCode",
-  reqType: "exampleReqType",
-  hyperVergeStatus: "exampleHyperVergeStatus",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -41,12 +38,12 @@ const CREATE_RESULT = {
   customerId: 42,
   httpStatusCode: "exampleHttpStatusCode",
   adhaarNumber: "exampleAdhaarNumber",
+  errorCode: "exampleErrorCode",
+  reqType: "exampleReqType",
+  hyperVergeStatus: "exampleHyperVergeStatus",
 };
 const FIND_MANY_RESULT = [
   {
-    errorCode: "exampleErrorCode",
-    reqType: "exampleReqType",
-    hyperVergeStatus: "exampleHyperVergeStatus",
     id: "exampleId",
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -54,12 +51,12 @@ const FIND_MANY_RESULT = [
     customerId: 42,
     httpStatusCode: "exampleHttpStatusCode",
     adhaarNumber: "exampleAdhaarNumber",
+    errorCode: "exampleErrorCode",
+    reqType: "exampleReqType",
+    hyperVergeStatus: "exampleHyperVergeStatus",
   },
 ];
 const FIND_ONE_RESULT = {
-  errorCode: "exampleErrorCode",
-  reqType: "exampleReqType",
-  hyperVergeStatus: "exampleHyperVergeStatus",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -67,6 +64,9 @@ const FIND_ONE_RESULT = {
   customerId: 42,
   httpStatusCode: "exampleHttpStatusCode",
   adhaarNumber: "exampleAdhaarNumber",
+  errorCode: "exampleErrorCode",
+  reqType: "exampleReqType",
+  hyperVergeStatus: "exampleHyperVergeStatus",
 };
 
 const service = {

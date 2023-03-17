@@ -62,6 +62,12 @@
   {
     "role": "user",
     "resource": "KarzaEmployment",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "KarzaEmployment",
     "action": "create:any",
     "attributes": "*"
   },
@@ -74,12 +80,6 @@
   {
     "role": "user",
     "resource": "KarzaEmployment",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaEmployment",
     "action": "delete:any",
     "attributes": "*"
   },
@@ -326,36 +326,6 @@
   {
     "role": "user",
     "resource": "ExperianCreditBureau",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaCustomerDetail",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaCustomerDetail",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaCustomerDetail",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaCustomerDetail",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaCustomerDetail",
     "action": "read:any",
     "attributes": "*"
   },
