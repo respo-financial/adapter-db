@@ -62,6 +62,12 @@
   {
     "role": "user",
     "resource": "KarzaEmployment",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "KarzaEmployment",
     "action": "create:any",
     "attributes": "*"
   },
@@ -69,12 +75,6 @@
     "role": "user",
     "resource": "KarzaEmployment",
     "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaEmployment",
-    "action": "read:own",
     "attributes": "*"
   },
   {

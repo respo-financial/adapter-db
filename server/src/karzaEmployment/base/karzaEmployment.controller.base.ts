@@ -52,15 +52,16 @@ export class KarzaEmploymentControllerBase {
     return await this.service.create({
       data: data,
       select: {
+        resPayload: true,
+        errorMessage: true,
+        httpStatusCode: true,
+        reqPayload: true,
+        karzaStatusCode: true,
         id: true,
         createdAt: true,
         updatedAt: true,
-        reqPayload: true,
-        resPayload: true,
         customerId: true,
-        errorCode: true,
-        errorMessage: true,
-        httpStatusCode: true,
+        karzaStatus: true,
       },
     });
   }
@@ -82,15 +83,16 @@ export class KarzaEmploymentControllerBase {
     return this.service.findMany({
       ...args,
       select: {
+        resPayload: true,
+        errorMessage: true,
+        httpStatusCode: true,
+        reqPayload: true,
+        karzaStatusCode: true,
         id: true,
         createdAt: true,
         updatedAt: true,
-        reqPayload: true,
-        resPayload: true,
         customerId: true,
-        errorCode: true,
-        errorMessage: true,
-        httpStatusCode: true,
+        karzaStatus: true,
       },
     });
   }
@@ -113,15 +115,16 @@ export class KarzaEmploymentControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        resPayload: true,
+        errorMessage: true,
+        httpStatusCode: true,
+        reqPayload: true,
+        karzaStatusCode: true,
         id: true,
         createdAt: true,
         updatedAt: true,
-        reqPayload: true,
-        resPayload: true,
         customerId: true,
-        errorCode: true,
-        errorMessage: true,
-        httpStatusCode: true,
+        karzaStatus: true,
       },
     });
     if (result === null) {
@@ -153,15 +156,16 @@ export class KarzaEmploymentControllerBase {
         where: params,
         data: data,
         select: {
+          resPayload: true,
+          errorMessage: true,
+          httpStatusCode: true,
+          reqPayload: true,
+          karzaStatusCode: true,
           id: true,
           createdAt: true,
           updatedAt: true,
-          reqPayload: true,
-          resPayload: true,
           customerId: true,
-          errorCode: true,
-          errorMessage: true,
-          httpStatusCode: true,
+          karzaStatus: true,
         },
       });
     } catch (error) {
@@ -192,15 +196,16 @@ export class KarzaEmploymentControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          resPayload: true,
+          errorMessage: true,
+          httpStatusCode: true,
+          reqPayload: true,
+          karzaStatusCode: true,
           id: true,
           createdAt: true,
           updatedAt: true,
-          reqPayload: true,
-          resPayload: true,
           customerId: true,
-          errorCode: true,
-          errorMessage: true,
-          httpStatusCode: true,
+          karzaStatus: true,
         },
       });
     } catch (error) {
