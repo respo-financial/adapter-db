@@ -139,17 +139,17 @@ model KnowlarityMakeCall {
 }
 
 model ExperianCreditBureau {
+  httpStatusCode     String?
+  errorMessage       String?
+  errorCode          String?
+  customerId         Int
+  reqPayload         Json
   resPayload         Json?
   id                 String   @id @default(cuid())
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
   reqType            String?
   experianStatusCode String?
-  httpStatusCode     String?
-  errorMessage       String?
-  errorCode          String?
-  customerId         Int      @unique
-  reqPayload         Json
 }
 
 model KarzaCustomerDetail {
