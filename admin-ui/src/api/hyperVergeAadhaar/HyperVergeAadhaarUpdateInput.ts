@@ -1,11 +1,13 @@
 import { InputJsonValue } from "../../types";
 
 export type HyperVergeAadhaarUpdateInput = {
-  errorMessage?: string;
+  errorMessage?: string | null;
   customerId?: number;
   reqPayload?: InputJsonValue;
   httpStatusCode?: string;
-  errorCode?: string | null;
   resPayload?: InputJsonValue;
-  mobile?: string | null;
+  adhaarNumber?: string;
+  errorCode?: string | null;
+  reqType?: string | null;
+  hyperVergeStatus?: string | null;
 };

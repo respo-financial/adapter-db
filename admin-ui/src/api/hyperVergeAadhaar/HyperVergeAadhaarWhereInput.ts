@@ -1,15 +1,14 @@
 import { StringFilter } from "../../util/StringFilter";
-import { IntFilter } from "../../util/IntFilter";
-import { JsonFilter } from "../../util/JsonFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { IntFilter } from "../../util/IntFilter";
 
 export type HyperVergeAadhaarWhereInput = {
   id?: StringFilter;
-  errorMessage?: StringFilter;
+  errorMessage?: StringNullableFilter;
   customerId?: IntFilter;
-  reqPayload?: JsonFilter;
   httpStatusCode?: StringFilter;
+  adhaarNumber?: StringFilter;
   errorCode?: StringNullableFilter;
-  resPayload?: JsonFilter;
-  mobile?: StringNullableFilter;
+  reqType?: StringNullableFilter;
+  hyperVergeStatus?: StringNullableFilter;
 };

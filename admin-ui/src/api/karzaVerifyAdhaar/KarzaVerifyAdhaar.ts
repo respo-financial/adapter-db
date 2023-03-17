@@ -1,14 +1,16 @@
 import { JsonValue } from "type-fest";
 
 export type KarzaVerifyAdhaar = {
+  errorMessage: string | null;
   id: string;
   createdAt: Date;
   updatedAt: Date;
   customerId: number;
   adhaarNumber: number;
-  reqPayload: JsonValue;
   resPayload: JsonValue;
-  httpStatusCode: number | null;
-  errorMessage: string | null;
+  httpStatusCode: number;
+  reqPayload: JsonValue;
   errorCode: string | null;
+  statusCode: string;
+  reqType: string;
 };

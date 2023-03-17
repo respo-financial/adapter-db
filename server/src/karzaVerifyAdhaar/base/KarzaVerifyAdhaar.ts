@@ -11,13 +11,24 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsDate, IsInt, IsJSON, IsOptional } from "class-validator";
+import { IsString, IsOptional, IsDate, IsInt, IsJSON } from "class-validator";
 import { Type } from "class-transformer";
 import { GraphQLJSON } from "graphql-type-json";
 import { JsonValue } from "type-fest";
 
 @ObjectType()
 class KarzaVerifyAdhaar {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  errorMessage!: string | null;
+
   @ApiProperty({
     required: true,
     type: String,
@@ -59,13 +70,6 @@ class KarzaVerifyAdhaar {
   adhaarNumber!: number;
 
   @ApiProperty({
-    required: true,
-  })
-  @IsJSON()
-  @Field(() => GraphQLJSON)
-  reqPayload!: JsonValue;
-
-  @ApiProperty({
     required: false,
   })
   @IsJSON()
@@ -76,26 +80,19 @@ class KarzaVerifyAdhaar {
   resPayload!: JsonValue;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: Number,
   })
   @IsInt()
-  @IsOptional()
-  @Field(() => Number, {
-    nullable: true,
-  })
-  httpStatusCode!: number | null;
+  @Field(() => Number)
+  httpStatusCode!: number;
 
   @ApiProperty({
-    required: false,
-    type: String,
+    required: true,
   })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  errorMessage!: string | null;
+  @IsJSON()
+  @Field(() => GraphQLJSON)
+  reqPayload!: JsonValue;
 
   @ApiProperty({
     required: false,
@@ -107,6 +104,22 @@ class KarzaVerifyAdhaar {
     nullable: true,
   })
   errorCode!: string | null;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  statusCode!: string;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  reqType!: string;
 }
 
 export { KarzaVerifyAdhaar as KarzaVerifyAdhaar };

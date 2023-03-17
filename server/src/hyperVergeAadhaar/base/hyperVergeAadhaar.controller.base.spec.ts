@@ -25,8 +25,10 @@ const CREATE_INPUT = {
   errorMessage: "exampleErrorMessage",
   customerId: 42,
   httpStatusCode: "exampleHttpStatusCode",
+  adhaarNumber: "exampleAdhaarNumber",
   errorCode: "exampleErrorCode",
-  mobile: "exampleMobile",
+  reqType: "exampleReqType",
+  hyperVergeStatus: "exampleHyperVergeStatus",
 };
 const CREATE_RESULT = {
   id: "exampleId",
@@ -35,8 +37,10 @@ const CREATE_RESULT = {
   errorMessage: "exampleErrorMessage",
   customerId: 42,
   httpStatusCode: "exampleHttpStatusCode",
+  adhaarNumber: "exampleAdhaarNumber",
   errorCode: "exampleErrorCode",
-  mobile: "exampleMobile",
+  reqType: "exampleReqType",
+  hyperVergeStatus: "exampleHyperVergeStatus",
 };
 const FIND_MANY_RESULT = [
   {
@@ -46,8 +50,10 @@ const FIND_MANY_RESULT = [
     errorMessage: "exampleErrorMessage",
     customerId: 42,
     httpStatusCode: "exampleHttpStatusCode",
+    adhaarNumber: "exampleAdhaarNumber",
     errorCode: "exampleErrorCode",
-    mobile: "exampleMobile",
+    reqType: "exampleReqType",
+    hyperVergeStatus: "exampleHyperVergeStatus",
   },
 ];
 const FIND_ONE_RESULT = {
@@ -57,8 +63,10 @@ const FIND_ONE_RESULT = {
   errorMessage: "exampleErrorMessage",
   customerId: 42,
   httpStatusCode: "exampleHttpStatusCode",
+  adhaarNumber: "exampleAdhaarNumber",
   errorCode: "exampleErrorCode",
-  mobile: "exampleMobile",
+  reqType: "exampleReqType",
+  hyperVergeStatus: "exampleHyperVergeStatus",
 };
 
 const service = {

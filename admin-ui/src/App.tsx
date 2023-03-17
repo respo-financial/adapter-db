@@ -21,10 +21,6 @@ import { HyperVergeAadhaarList } from "./hyperVergeAadhaar/HyperVergeAadhaarList
 import { HyperVergeAadhaarCreate } from "./hyperVergeAadhaar/HyperVergeAadhaarCreate";
 import { HyperVergeAadhaarEdit } from "./hyperVergeAadhaar/HyperVergeAadhaarEdit";
 import { HyperVergeAadhaarShow } from "./hyperVergeAadhaar/HyperVergeAadhaarShow";
-import { KarzaAdhaarConsentList } from "./karzaAdhaarConsent/KarzaAdhaarConsentList";
-import { KarzaAdhaarConsentCreate } from "./karzaAdhaarConsent/KarzaAdhaarConsentCreate";
-import { KarzaAdhaarConsentEdit } from "./karzaAdhaarConsent/KarzaAdhaarConsentEdit";
-import { KarzaAdhaarConsentShow } from "./karzaAdhaarConsent/KarzaAdhaarConsentShow";
 import { KarzaAdhaarVerifyList } from "./karzaAdhaarVerify/KarzaAdhaarVerifyList";
 import { KarzaAdhaarVerifyCreate } from "./karzaAdhaarVerify/KarzaAdhaarVerifyCreate";
 import { KarzaAdhaarVerifyEdit } from "./karzaAdhaarVerify/KarzaAdhaarVerifyEdit";
@@ -114,13 +110,6 @@ const App = (): React.ReactElement => {
           edit={HyperVergeAadhaarEdit}
           create={HyperVergeAadhaarCreate}
           show={HyperVergeAadhaarShow}
-        />
-        <Resource
-          name="KarzaAdhaarConsent"
-          list={KarzaAdhaarConsentList}
-          edit={KarzaAdhaarConsentEdit}
-          create={KarzaAdhaarConsentCreate}
-          show={KarzaAdhaarConsentShow}
         />
         <Resource
           name="KarzaAdhaarVerify"

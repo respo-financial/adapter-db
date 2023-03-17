@@ -13,12 +13,13 @@ export const ExperianCreditBureauCreate = (
   return (
     <Create {...props}>
       <SimpleForm>
+        <div />
+        <TextInput label="reqType" source="reqType" />
+        <TextInput label="experianStatusCode" source="experianStatusCode" />
         <TextInput label="httpStatusCode" source="httpStatusCode" />
         <TextInput label="errorMessage" multiline source="errorMessage" />
         <TextInput label="errorCode" source="errorCode" />
         <NumberInput step={1} label="customerId" source="customerId" />
-        <TextInput label="Address" source="address" />
-        <div />
         <div />
       </SimpleForm>
     </Create>

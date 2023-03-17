@@ -45,29 +45,18 @@ model KarzaEmployment {
 }
 
 model HyperVergeAadhaar {
-  id             String   @id @default(cuid())
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-  errorMessage   String
-  customerId     Int      @unique
-  reqPayload     Json
-  httpStatusCode String
-  errorCode      String?  @unique
-  resPayload     Json?
-  mobile         String?  @unique
-}
-
-model KarzaAdhaarConsent {
-  id             String   @id @default(cuid())
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-  reqPayload     Json
-  resPayload     Json?
-  customerId     Int      @unique
-  mobileNumber   Int?
-  httpStatusCode String?
-  errorMessage   String?
-  errorCode      String?
+  id               String   @id @default(cuid())
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  errorMessage     String?
+  customerId       Int      @unique
+  reqPayload       Json
+  httpStatusCode   String
+  resPayload       Json?
+  adhaarNumber     String
+  errorCode        String?
+  reqType          String?
+  hyperVergeStatus String?
 }
 
 model KarzaAdhaarVerify {
@@ -82,16 +71,18 @@ model KarzaAdhaarVerify {
 }
 
 model KarzaVerifyAdhaar {
+  errorMessage   String?
   id             String   @id @default(cuid())
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   customerId     Int      @unique
   adhaarNumber   Int      @unique
-  reqPayload     Json
   resPayload     Json?
-  httpStatusCode Int?
-  errorMessage   String?
+  httpStatusCode Int
+  reqPayload     Json
   errorCode      String?
+  statusCode     String
+  reqType        String
 }
 
 model HyperVergeKycFailureHistory {
@@ -148,16 +139,17 @@ model KnowlarityMakeCall {
 }
 
 model ExperianCreditBureau {
-  httpStatusCode String?
-  errorMessage   String?
-  errorCode      String?
-  customerId     Int      @unique
-  address        String?
-  reqPayload     Json
-  resPayload     Json?
-  id             String   @id @default(cuid())
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  resPayload         Json?
+  id                 String   @id @default(cuid())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  reqType            String?
+  experianStatusCode String?
+  httpStatusCode     String?
+  errorMessage       String?
+  errorCode          String?
+  customerId         Int      @unique
+  reqPayload         Json
 }
 
 model KarzaCustomerDetail {

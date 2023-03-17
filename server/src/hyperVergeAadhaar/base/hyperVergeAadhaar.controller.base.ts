@@ -59,9 +59,11 @@ export class HyperVergeAadhaarControllerBase {
         customerId: true,
         reqPayload: true,
         httpStatusCode: true,
-        errorCode: true,
         resPayload: true,
-        mobile: true,
+        adhaarNumber: true,
+        errorCode: true,
+        reqType: true,
+        hyperVergeStatus: true,
       },
     });
   }
@@ -90,9 +92,11 @@ export class HyperVergeAadhaarControllerBase {
         customerId: true,
         reqPayload: true,
         httpStatusCode: true,
-        errorCode: true,
         resPayload: true,
-        mobile: true,
+        adhaarNumber: true,
+        errorCode: true,
+        reqType: true,
+        hyperVergeStatus: true,
       },
     });
   }
@@ -122,9 +126,11 @@ export class HyperVergeAadhaarControllerBase {
         customerId: true,
         reqPayload: true,
         httpStatusCode: true,
-        errorCode: true,
         resPayload: true,
-        mobile: true,
+        adhaarNumber: true,
+        errorCode: true,
+        reqType: true,
+        hyperVergeStatus: true,
       },
     });
     if (result === null) {
@@ -163,9 +169,11 @@ export class HyperVergeAadhaarControllerBase {
           customerId: true,
           reqPayload: true,
           httpStatusCode: true,
-          errorCode: true,
           resPayload: true,
-          mobile: true,
+          adhaarNumber: true,
+          errorCode: true,
+          reqType: true,
+          hyperVergeStatus: true,
         },
       });
     } catch (error) {
@@ -203,9 +211,11 @@ export class HyperVergeAadhaarControllerBase {
           customerId: true,
           reqPayload: true,
           httpStatusCode: true,
-          errorCode: true,
           resPayload: true,
-          mobile: true,
+          adhaarNumber: true,
+          errorCode: true,
+          reqType: true,
+          hyperVergeStatus: true,
         },
       });
     } catch (error) {

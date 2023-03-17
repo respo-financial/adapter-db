@@ -12,16 +12,18 @@ export const KarzaVerifyAdhaarList = (props: ListProps): React.ReactElement => {
       pagination={<Pagination />}
     >
       <Datagrid rowClick="show">
+        <TextField label="errorMessage" source="errorMessage" />
         <TextField label="ID" source="id" />
         <DateField source="createdAt" label="Created At" />
         <DateField source="updatedAt" label="Updated At" />
         <TextField label="customerId" source="customerId" />
         <TextField label="adhaarNumber" source="adhaarNumber" />
-        <TextField label="reqPayload" source="reqPayload" />
         <TextField label="resPayload" source="resPayload" />
         <TextField label="httpStatusCode" source="httpStatusCode" />
-        <TextField label="errorMessage" source="errorMessage" />
+        <TextField label="reqPayload" source="reqPayload" />
         <TextField label="errorCode" source="errorCode" />
+        <TextField label="statusCode" source="statusCode" />
+        <TextField label="reqType" source="reqType" />
       </Datagrid>
     </List>
   );

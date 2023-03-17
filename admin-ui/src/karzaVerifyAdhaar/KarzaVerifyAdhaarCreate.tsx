@@ -3,8 +3,8 @@ import {
   Create,
   SimpleForm,
   CreateProps,
-  NumberInput,
   TextInput,
+  NumberInput,
 } from "react-admin";
 
 export const KarzaVerifyAdhaarCreate = (
@@ -13,13 +13,15 @@ export const KarzaVerifyAdhaarCreate = (
   return (
     <Create {...props}>
       <SimpleForm>
+        <TextInput label="errorMessage" source="errorMessage" />
         <NumberInput step={1} label="customerId" source="customerId" />
         <NumberInput step={1} label="adhaarNumber" source="adhaarNumber" />
         <div />
-        <div />
         <NumberInput step={1} label="httpStatusCode" source="httpStatusCode" />
-        <TextInput label="errorMessage" source="errorMessage" />
+        <div />
         <TextInput label="errorCode" source="errorCode" />
+        <TextInput label="statusCode" source="statusCode" />
+        <TextInput label="reqType" source="reqType" />
       </SimpleForm>
     </Create>
   );

@@ -8,7 +8,9 @@ export type HyperVergeAadhaarOrderByInput = {
   customerId?: SortOrder;
   reqPayload?: SortOrder;
   httpStatusCode?: SortOrder;
-  errorCode?: SortOrder;
   resPayload?: SortOrder;
-  mobile?: SortOrder;
+  adhaarNumber?: SortOrder;
+  errorCode?: SortOrder;
+  reqType?: SortOrder;
+  hyperVergeStatus?: SortOrder;
 };

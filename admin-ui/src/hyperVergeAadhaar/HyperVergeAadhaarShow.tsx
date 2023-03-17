@@ -18,9 +18,11 @@ export const HyperVergeAadhaarShow = (props: ShowProps): React.ReactElement => {
         <TextField label="customerId" source="customerId" />
         <TextField label="reqPayload" source="reqPayload" />
         <TextField label="httpStatusCode" source="httpStatusCode" />
-        <TextField label="errorCode" source="errorCode" />
         <TextField label="resPayload" source="resPayload" />
-        <TextField label="mobile" source="mobile" />
+        <TextField label="adhaarNumber" source="adhaarNumber" />
+        <TextField label="errorCode" source="errorCode" />
+        <TextField label="reqType" source="reqType" />
+        <TextField label="hyperVergeStatus" source="hyperVergeStatus" />
       </SimpleShowLayout>
     </Show>
   );

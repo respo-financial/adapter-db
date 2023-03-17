@@ -11,19 +11,22 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsInt, IsJSON, IsOptional } from "class-validator";
+import { IsString, IsOptional, IsInt, IsJSON } from "class-validator";
 import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
 
 @InputType()
 class HyperVergeAadhaarCreateInput {
   @ApiProperty({
-    required: true,
+    required: false,
     type: String,
   })
   @IsString()
-  @Field(() => String)
-  errorMessage!: string;
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  errorMessage?: string | null;
 
   @ApiProperty({
     required: true,
@@ -50,6 +53,24 @@ class HyperVergeAadhaarCreateInput {
 
   @ApiProperty({
     required: false,
+  })
+  @IsJSON()
+  @IsOptional()
+  @Field(() => GraphQLJSON, {
+    nullable: true,
+  })
+  resPayload?: InputJsonValue;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  adhaarNumber!: string;
+
+  @ApiProperty({
+    required: false,
     type: String,
   })
   @IsString()
@@ -61,13 +82,14 @@ class HyperVergeAadhaarCreateInput {
 
   @ApiProperty({
     required: false,
+    type: String,
   })
-  @IsJSON()
+  @IsString()
   @IsOptional()
-  @Field(() => GraphQLJSON, {
+  @Field(() => String, {
     nullable: true,
   })
-  resPayload?: InputJsonValue;
+  reqType?: string | null;
 
   @ApiProperty({
     required: false,
@@ -78,7 +100,7 @@ class HyperVergeAadhaarCreateInput {
   @Field(() => String, {
     nullable: true,
   })
-  mobile?: string | null;
+  hyperVergeStatus?: string | null;
 }
 
 export { HyperVergeAadhaarCreateInput as HyperVergeAadhaarCreateInput };

@@ -121,36 +121,6 @@
   },
   {
     "role": "user",
-    "resource": "KarzaAdhaarConsent",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaAdhaarConsent",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaAdhaarConsent",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaAdhaarConsent",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaAdhaarConsent",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
     "resource": "KarzaAdhaarVerify",
     "action": "read:own",
     "attributes": "*"
@@ -182,6 +152,12 @@
   {
     "role": "user",
     "resource": "KarzaVerifyAdhaar",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "KarzaVerifyAdhaar",
     "action": "create:any",
     "attributes": "*"
   },
@@ -189,12 +165,6 @@
     "role": "user",
     "resource": "KarzaVerifyAdhaar",
     "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaVerifyAdhaar",
-    "action": "read:own",
     "attributes": "*"
   },
   {

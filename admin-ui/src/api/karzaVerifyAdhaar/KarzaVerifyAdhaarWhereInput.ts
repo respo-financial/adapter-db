@@ -1,16 +1,17 @@
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { StringFilter } from "../../util/StringFilter";
 import { IntFilter } from "../../util/IntFilter";
 import { JsonFilter } from "../../util/JsonFilter";
-import { IntNullableFilter } from "../../util/IntNullableFilter";
-import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 export type KarzaVerifyAdhaarWhereInput = {
+  errorMessage?: StringNullableFilter;
   id?: StringFilter;
   customerId?: IntFilter;
   adhaarNumber?: IntFilter;
-  reqPayload?: JsonFilter;
   resPayload?: JsonFilter;
-  httpStatusCode?: IntNullableFilter;
-  errorMessage?: StringNullableFilter;
+  httpStatusCode?: IntFilter;
+  reqPayload?: JsonFilter;
   errorCode?: StringNullableFilter;
+  statusCode?: StringFilter;
+  reqType?: StringFilter;
 };

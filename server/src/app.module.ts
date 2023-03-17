@@ -5,7 +5,6 @@ import { UserModule } from "./user/user.module";
 import { KarzaPanModule } from "./karzaPan/karzaPan.module";
 import { KarzaEmploymentModule } from "./karzaEmployment/karzaEmployment.module";
 import { HyperVergeAadhaarModule } from "./hyperVergeAadhaar/hyperVergeAadhaar.module";
-import { KarzaAdhaarConsentModule } from "./karzaAdhaarConsent/karzaAdhaarConsent.module";
 import { KarzaAdhaarVerifyModule } from "./karzaAdhaarVerify/karzaAdhaarVerify.module";
 import { KarzaVerifyAdhaarModule } from "./karzaVerifyAdhaar/karzaVerifyAdhaar.module";
 import { HyperVergeKycFailureHistoryModule } from "./hyperVergeKycFailureHistory/hyperVergeKycFailureHistory.module";
@@ -35,7 +34,6 @@ import { AuthModule } from "./auth/auth.module";
     KarzaPanModule,
     KarzaEmploymentModule,
     HyperVergeAadhaarModule,
-    KarzaAdhaarConsentModule,
     KarzaAdhaarVerifyModule,
     KarzaVerifyAdhaarModule,
     HyperVergeKycFailureHistoryModule,

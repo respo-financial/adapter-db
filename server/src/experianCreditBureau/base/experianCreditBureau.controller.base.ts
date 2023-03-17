@@ -52,16 +52,17 @@ export class ExperianCreditBureauControllerBase {
     return await this.service.create({
       data: data,
       select: {
-        httpStatusCode: true,
-        errorMessage: true,
-        errorCode: true,
-        customerId: true,
-        address: true,
-        reqPayload: true,
         resPayload: true,
         id: true,
         createdAt: true,
         updatedAt: true,
+        reqType: true,
+        experianStatusCode: true,
+        httpStatusCode: true,
+        errorMessage: true,
+        errorCode: true,
+        customerId: true,
+        reqPayload: true,
       },
     });
   }
@@ -85,16 +86,17 @@ export class ExperianCreditBureauControllerBase {
     return this.service.findMany({
       ...args,
       select: {
-        httpStatusCode: true,
-        errorMessage: true,
-        errorCode: true,
-        customerId: true,
-        address: true,
-        reqPayload: true,
         resPayload: true,
         id: true,
         createdAt: true,
         updatedAt: true,
+        reqType: true,
+        experianStatusCode: true,
+        httpStatusCode: true,
+        errorMessage: true,
+        errorCode: true,
+        customerId: true,
+        reqPayload: true,
       },
     });
   }
@@ -117,16 +119,17 @@ export class ExperianCreditBureauControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
-        httpStatusCode: true,
-        errorMessage: true,
-        errorCode: true,
-        customerId: true,
-        address: true,
-        reqPayload: true,
         resPayload: true,
         id: true,
         createdAt: true,
         updatedAt: true,
+        reqType: true,
+        experianStatusCode: true,
+        httpStatusCode: true,
+        errorMessage: true,
+        errorCode: true,
+        customerId: true,
+        reqPayload: true,
       },
     });
     if (result === null) {
@@ -158,16 +161,17 @@ export class ExperianCreditBureauControllerBase {
         where: params,
         data: data,
         select: {
-          httpStatusCode: true,
-          errorMessage: true,
-          errorCode: true,
-          customerId: true,
-          address: true,
-          reqPayload: true,
           resPayload: true,
           id: true,
           createdAt: true,
           updatedAt: true,
+          reqType: true,
+          experianStatusCode: true,
+          httpStatusCode: true,
+          errorMessage: true,
+          errorCode: true,
+          customerId: true,
+          reqPayload: true,
         },
       });
     } catch (error) {
@@ -198,16 +202,17 @@ export class ExperianCreditBureauControllerBase {
       return await this.service.delete({
         where: params,
         select: {
-          httpStatusCode: true,
-          errorMessage: true,
-          errorCode: true,
-          customerId: true,
-          address: true,
-          reqPayload: true,
           resPayload: true,
           id: true,
           createdAt: true,
           updatedAt: true,
+          reqType: true,
+          experianStatusCode: true,
+          httpStatusCode: true,
+          errorMessage: true,
+          errorCode: true,
+          customerId: true,
+          reqPayload: true,
         },
       });
     } catch (error) {
