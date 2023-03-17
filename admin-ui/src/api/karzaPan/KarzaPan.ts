@@ -11,4 +11,5 @@ export type KarzaPan = {
   httpStatusCode: string | null;
   errorCode: string | null;
   customerId: number;
+  panName: string | null;
 };

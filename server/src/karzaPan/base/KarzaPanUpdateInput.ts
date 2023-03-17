@@ -91,6 +91,17 @@ class KarzaPanUpdateInput {
     nullable: true,
   })
   customerId?: number;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  panName?: string | null;
 }
 
 export { KarzaPanUpdateInput as KarzaPanUpdateInput };

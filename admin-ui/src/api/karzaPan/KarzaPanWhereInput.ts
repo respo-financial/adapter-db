@@ -12,4 +12,5 @@ export type KarzaPanWhereInput = {
   httpStatusCode?: StringNullableFilter;
   errorCode?: StringNullableFilter;
   customerId?: IntFilter;
+  panName?: StringNullableFilter;
 };

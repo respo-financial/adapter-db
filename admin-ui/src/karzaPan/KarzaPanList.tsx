@@ -22,6 +22,7 @@ export const KarzaPanList = (props: ListProps): React.ReactElement => {
         <TextField label="httpStatusCode" source="httpStatusCode" />
         <TextField label="errorCode" source="errorCode" />
         <TextField label="customerId" source="customerId" />
+        <TextField label="panName" source="panName" />
       </Datagrid>
     </List>
   );

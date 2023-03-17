@@ -27,6 +27,7 @@ const CREATE_INPUT = {
   httpStatusCode: "exampleHttpStatusCode",
   errorCode: "exampleErrorCode",
   customerId: 42,
+  panName: "examplePanName",
 };
 const CREATE_RESULT = {
   id: "exampleId",
@@ -37,6 +38,7 @@ const CREATE_RESULT = {
   httpStatusCode: "exampleHttpStatusCode",
   errorCode: "exampleErrorCode",
   customerId: 42,
+  panName: "examplePanName",
 };
 const FIND_MANY_RESULT = [
   {
@@ -48,6 +50,7 @@ const FIND_MANY_RESULT = [
     httpStatusCode: "exampleHttpStatusCode",
     errorCode: "exampleErrorCode",
     customerId: 42,
+    panName: "examplePanName",
   },
 ];
 const FIND_ONE_RESULT = {
@@ -59,6 +62,7 @@ const FIND_ONE_RESULT = {
   httpStatusCode: "exampleHttpStatusCode",
   errorCode: "exampleErrorCode",
   customerId: 42,
+  panName: "examplePanName",
 };
 
 const service = {

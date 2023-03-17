@@ -18,6 +18,7 @@ export const KarzaPanCreate = (props: CreateProps): React.ReactElement => {
         <TextInput label="httpStatusCode" source="httpStatusCode" />
         <TextInput label="errorCode" source="errorCode" />
         <NumberInput step={1} label="customerId" source="customerId" />
+        <TextInput label="panName" source="panName" />
       </SimpleForm>
     </Create>
   );
