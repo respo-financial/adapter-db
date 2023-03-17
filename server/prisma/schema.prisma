@@ -1,0 +1,185 @@
+datasource postgres {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  firstName String?
+  lastName  String?
+  username  String   @unique
+  password  String
+  roles     Json
+}
+
+model KarzaPan {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  panNumber      String
+  reqPayload     Json
+  resPayload     Json?
+  errorMessage   String?
+  httpStatusCode String?
+  errorCode      String?
+  customerId     Int      @unique
+}
+
+model KarzaEmployment {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  reqPayload     Json
+  resPayload     Json
+  customerId     Int      @unique
+  errorCode      String?
+  errorMessage   String?
+  httpStatusCode String?
+}
+
+model HyperVergeAadhaar {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  errorMessage   String
+  customerId     Int      @unique
+  reqPayload     Json
+  httpStatusCode String
+  errorCode      String?  @unique
+  resPayload     Json?
+  mobile         String?  @unique
+}
+
+model KarzaAdhaarConsent {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  reqPayload     Json
+  resPayload     Json?
+  customerId     Int      @unique
+  mobileNumber   Int?
+  httpStatusCode String?
+  errorMessage   String?
+  errorCode      String?
+}
+
+model KarzaAdhaarVerify {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  customerId     Int      @unique
+  adhaarNumber   Int      @unique
+  reqPayload     Json?
+  resPayload     Json?
+  httpStatusCode Int?
+}
+
+model KarzaVerifyAdhaar {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  customerId     Int      @unique
+  adhaarNumber   Int      @unique
+  reqPayload     Json
+  resPayload     Json?
+  httpStatusCode Int?
+  errorMessage   String?
+  errorCode      String?
+}
+
+model HyperVergeKycFailureHistory {
+  customerId     Int?     @unique
+  reqPayload     Json?    @unique
+  id             String   @id @default(cuid())
+  resPayload     Json?    @unique
+  httpStatusCode Int      @unique
+  errorCode      Int      @unique
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  errorMessage   String
+}
+
+model HyperVergeOtp {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  customerId     Int      @unique
+  reqPayload     Json
+  resPayload     Json?
+  httpStatusCode String
+  errorCode      String?
+  errorMessage   String?
+}
+
+model HyperVergeKycSuccess {
+  aadhaarNumber Int?      @unique
+  aadhaarDob    DateTime?
+  panNumber     String?   @unique
+  panDob        DateTime?
+  resPayload    Json?     @unique
+  customerId    Int?      @unique
+  id            String    @id @default(cuid())
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  mobileNumber  Int?      @unique
+  reqPayload    Json?     @unique
+}
+
+model KnowlarityMakeCall {
+  id                   String   @id @default(cuid())
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  customerId           Int      @unique
+  agentId              Int      @unique
+  customerMobileNumber Int      @unique
+  agentMobileNumber    Int
+  reqPayload           Json
+  resPayload           Json
+  httpStatusCode       String?
+  errorCode            String
+  errorMessage         String
+}
+
+model ExperianCreditBureau {
+  httpStatusCode String?
+  errorMessage   String?
+  errorCode      String?
+  customerId     Int      @unique
+  address        String?
+  reqPayload     Json
+  resPayload     Json?
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model KarzaCustomerDetail {
+  errorCode      String?
+  errorMessage   String?
+  panNumber      String   @unique
+  reqPayload     Json?
+  httpStatusCode String?
+  resPayload     Json?
+  customerId     Int      @unique
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model CashfreePaymentGateway {
+  reqPayload     Json?
+  resPayload     Json
+  errorMessage   String
+  errorCode      String
+  customerId     Int?     @unique
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  httpStatusCode String?
+}
