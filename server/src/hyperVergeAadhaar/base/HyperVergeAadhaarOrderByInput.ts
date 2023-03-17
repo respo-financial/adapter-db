@@ -25,6 +25,33 @@ class HyperVergeAadhaarOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+  errorCode?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  reqType?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  hyperVergeStatus?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
   id?: SortOrder;
 
   @ApiProperty({
@@ -88,15 +115,6 @@ class HyperVergeAadhaarOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  errorCode?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["asc", "desc"],
-  })
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
   resPayload?: SortOrder;
 
   @ApiProperty({
@@ -106,7 +124,7 @@ class HyperVergeAadhaarOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  mobile?: SortOrder;
+  adhaarNumber?: SortOrder;
 }
 
 export { HyperVergeAadhaarOrderByInput as HyperVergeAadhaarOrderByInput };

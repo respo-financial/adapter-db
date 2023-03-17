@@ -11,13 +11,43 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsDate, IsInt, IsJSON, IsOptional } from "class-validator";
+import { IsString, IsOptional, IsDate, IsInt, IsJSON } from "class-validator";
 import { Type } from "class-transformer";
 import { GraphQLJSON } from "graphql-type-json";
 import { JsonValue } from "type-fest";
 
 @ObjectType()
 class HyperVergeAadhaar {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  errorCode!: string | null;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  reqType!: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  hyperVergeStatus!: string | null;
+
   @ApiProperty({
     required: true,
     type: String,
@@ -43,12 +73,15 @@ class HyperVergeAadhaar {
   updatedAt!: Date;
 
   @ApiProperty({
-    required: true,
+    required: false,
     type: String,
   })
   @IsString()
-  @Field(() => String)
-  errorMessage!: string;
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  errorMessage!: string | null;
 
   @ApiProperty({
     required: true,
@@ -75,17 +108,6 @@ class HyperVergeAadhaar {
 
   @ApiProperty({
     required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  errorCode!: string | null;
-
-  @ApiProperty({
-    required: false,
   })
   @IsJSON()
   @IsOptional()
@@ -95,15 +117,12 @@ class HyperVergeAadhaar {
   resPayload!: JsonValue;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  mobile!: string | null;
+  @Field(() => String)
+  adhaarNumber!: string;
 }
 
 export { HyperVergeAadhaar as HyperVergeAadhaar };

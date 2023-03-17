@@ -1,11 +1,12 @@
 import { InputJsonValue } from "../../types";
 
 export type ExperianCreditBureauCreateInput = {
+  resPayload?: InputJsonValue;
+  reqType?: string | null;
+  experianStatusCode?: string | null;
   httpStatusCode?: string | null;
   errorMessage?: string | null;
   errorCode?: string | null;
   customerId: number;
-  address?: string | null;
   reqPayload: InputJsonValue;
-  resPayload?: InputJsonValue;
 };

@@ -52,6 +52,9 @@ export class HyperVergeAadhaarControllerBase {
     return await this.service.create({
       data: data,
       select: {
+        errorCode: true,
+        reqType: true,
+        hyperVergeStatus: true,
         id: true,
         createdAt: true,
         updatedAt: true,
@@ -59,9 +62,8 @@ export class HyperVergeAadhaarControllerBase {
         customerId: true,
         reqPayload: true,
         httpStatusCode: true,
-        errorCode: true,
         resPayload: true,
-        mobile: true,
+        adhaarNumber: true,
       },
     });
   }
@@ -83,6 +85,9 @@ export class HyperVergeAadhaarControllerBase {
     return this.service.findMany({
       ...args,
       select: {
+        errorCode: true,
+        reqType: true,
+        hyperVergeStatus: true,
         id: true,
         createdAt: true,
         updatedAt: true,
@@ -90,9 +95,8 @@ export class HyperVergeAadhaarControllerBase {
         customerId: true,
         reqPayload: true,
         httpStatusCode: true,
-        errorCode: true,
         resPayload: true,
-        mobile: true,
+        adhaarNumber: true,
       },
     });
   }
@@ -115,6 +119,9 @@ export class HyperVergeAadhaarControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        errorCode: true,
+        reqType: true,
+        hyperVergeStatus: true,
         id: true,
         createdAt: true,
         updatedAt: true,
@@ -122,9 +129,8 @@ export class HyperVergeAadhaarControllerBase {
         customerId: true,
         reqPayload: true,
         httpStatusCode: true,
-        errorCode: true,
         resPayload: true,
-        mobile: true,
+        adhaarNumber: true,
       },
     });
     if (result === null) {
@@ -156,6 +162,9 @@ export class HyperVergeAadhaarControllerBase {
         where: params,
         data: data,
         select: {
+          errorCode: true,
+          reqType: true,
+          hyperVergeStatus: true,
           id: true,
           createdAt: true,
           updatedAt: true,
@@ -163,9 +172,8 @@ export class HyperVergeAadhaarControllerBase {
           customerId: true,
           reqPayload: true,
           httpStatusCode: true,
-          errorCode: true,
           resPayload: true,
-          mobile: true,
+          adhaarNumber: true,
         },
       });
     } catch (error) {
@@ -196,6 +204,9 @@ export class HyperVergeAadhaarControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          errorCode: true,
+          reqType: true,
+          hyperVergeStatus: true,
           id: true,
           createdAt: true,
           updatedAt: true,
@@ -203,9 +214,8 @@ export class HyperVergeAadhaarControllerBase {
           customerId: true,
           reqPayload: true,
           httpStatusCode: true,
-          errorCode: true,
           resPayload: true,
-          mobile: true,
+          adhaarNumber: true,
         },
       });
     } catch (error) {

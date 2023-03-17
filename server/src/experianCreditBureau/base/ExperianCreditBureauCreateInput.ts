@@ -11,12 +11,44 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsOptional, IsInt, IsJSON } from "class-validator";
+import { IsJSON, IsOptional, IsString, IsInt } from "class-validator";
 import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
 
 @InputType()
 class ExperianCreditBureauCreateInput {
+  @ApiProperty({
+    required: false,
+  })
+  @IsJSON()
+  @IsOptional()
+  @Field(() => GraphQLJSON, {
+    nullable: true,
+  })
+  resPayload?: InputJsonValue;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  reqType?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  experianStatusCode?: string | null;
+
   @ApiProperty({
     required: false,
     type: String,
@@ -59,32 +91,11 @@ class ExperianCreditBureauCreateInput {
   customerId!: number;
 
   @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  address?: string | null;
-
-  @ApiProperty({
     required: true,
   })
   @IsJSON()
   @Field(() => GraphQLJSON)
   reqPayload!: InputJsonValue;
-
-  @ApiProperty({
-    required: false,
-  })
-  @IsJSON()
-  @IsOptional()
-  @Field(() => GraphQLJSON, {
-    nullable: true,
-  })
-  resPayload?: InputJsonValue;
 }
 
 export { ExperianCreditBureauCreateInput as ExperianCreditBureauCreateInput };

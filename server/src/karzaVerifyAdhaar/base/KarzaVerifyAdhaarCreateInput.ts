@@ -11,12 +11,23 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsInt, IsJSON, IsOptional, IsString } from "class-validator";
+import { IsString, IsOptional, IsInt, IsJSON } from "class-validator";
 import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
 
 @InputType()
 class KarzaVerifyAdhaarCreateInput {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  errorMessage?: string | null;
+
   @ApiProperty({
     required: true,
     type: Number,
@@ -34,13 +45,6 @@ class KarzaVerifyAdhaarCreateInput {
   adhaarNumber!: number;
 
   @ApiProperty({
-    required: true,
-  })
-  @IsJSON()
-  @Field(() => GraphQLJSON)
-  reqPayload!: InputJsonValue;
-
-  @ApiProperty({
     required: false,
   })
   @IsJSON()
@@ -51,26 +55,19 @@ class KarzaVerifyAdhaarCreateInput {
   resPayload?: InputJsonValue;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: Number,
   })
   @IsInt()
-  @IsOptional()
-  @Field(() => Number, {
-    nullable: true,
-  })
-  httpStatusCode?: number | null;
+  @Field(() => Number)
+  httpStatusCode!: number;
 
   @ApiProperty({
-    required: false,
-    type: String,
+    required: true,
   })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  errorMessage?: string | null;
+  @IsJSON()
+  @Field(() => GraphQLJSON)
+  reqPayload!: InputJsonValue;
 
   @ApiProperty({
     required: false,
@@ -82,6 +79,22 @@ class KarzaVerifyAdhaarCreateInput {
     nullable: true,
   })
   errorCode?: string | null;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  statusCode!: string;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  reqType!: string;
 }
 
 export { KarzaVerifyAdhaarCreateInput as KarzaVerifyAdhaarCreateInput };

@@ -11,16 +11,26 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { StringFilter } from "../../util/StringFilter";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { Type } from "class-transformer";
 import { IsOptional } from "class-validator";
+import { StringFilter } from "../../util/StringFilter";
 import { IntFilter } from "../../util/IntFilter";
 import { JsonFilter } from "../../util/JsonFilter";
-import { IntNullableFilter } from "../../util/IntNullableFilter";
-import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 @InputType()
 class KarzaVerifyAdhaarWhereInput {
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  errorMessage?: StringNullableFilter;
+
   @ApiProperty({
     required: false,
     type: StringFilter,
@@ -63,7 +73,18 @@ class KarzaVerifyAdhaarWhereInput {
   @Field(() => JsonFilter, {
     nullable: true,
   })
-  reqPayload?: JsonFilter;
+  resPayload?: JsonFilter;
+
+  @ApiProperty({
+    required: false,
+    type: IntFilter,
+  })
+  @Type(() => IntFilter)
+  @IsOptional()
+  @Field(() => IntFilter, {
+    nullable: true,
+  })
+  httpStatusCode?: IntFilter;
 
   @ApiProperty({
     required: false,
@@ -74,29 +95,7 @@ class KarzaVerifyAdhaarWhereInput {
   @Field(() => JsonFilter, {
     nullable: true,
   })
-  resPayload?: JsonFilter;
-
-  @ApiProperty({
-    required: false,
-    type: IntNullableFilter,
-  })
-  @Type(() => IntNullableFilter)
-  @IsOptional()
-  @Field(() => IntNullableFilter, {
-    nullable: true,
-  })
-  httpStatusCode?: IntNullableFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringNullableFilter,
-  })
-  @Type(() => StringNullableFilter)
-  @IsOptional()
-  @Field(() => StringNullableFilter, {
-    nullable: true,
-  })
-  errorMessage?: StringNullableFilter;
+  reqPayload?: JsonFilter;
 
   @ApiProperty({
     required: false,
@@ -108,6 +107,28 @@ class KarzaVerifyAdhaarWhereInput {
     nullable: true,
   })
   errorCode?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  statusCode?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  reqType?: StringFilter;
 }
 
 export { KarzaVerifyAdhaarWhereInput as KarzaVerifyAdhaarWhereInput };

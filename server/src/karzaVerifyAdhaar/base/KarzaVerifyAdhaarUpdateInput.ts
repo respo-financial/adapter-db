@@ -11,12 +11,23 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsInt, IsOptional, IsJSON, IsString } from "class-validator";
+import { IsString, IsOptional, IsInt, IsJSON } from "class-validator";
 import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
 
 @InputType()
 class KarzaVerifyAdhaarUpdateInput {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  errorMessage?: string | null;
+
   @ApiProperty({
     required: false,
     type: Number,
@@ -47,16 +58,6 @@ class KarzaVerifyAdhaarUpdateInput {
   @Field(() => GraphQLJSON, {
     nullable: true,
   })
-  reqPayload?: InputJsonValue;
-
-  @ApiProperty({
-    required: false,
-  })
-  @IsJSON()
-  @IsOptional()
-  @Field(() => GraphQLJSON, {
-    nullable: true,
-  })
   resPayload?: InputJsonValue;
 
   @ApiProperty({
@@ -68,18 +69,17 @@ class KarzaVerifyAdhaarUpdateInput {
   @Field(() => Number, {
     nullable: true,
   })
-  httpStatusCode?: number | null;
+  httpStatusCode?: number;
 
   @ApiProperty({
     required: false,
-    type: String,
   })
-  @IsString()
+  @IsJSON()
   @IsOptional()
-  @Field(() => String, {
+  @Field(() => GraphQLJSON, {
     nullable: true,
   })
-  errorMessage?: string | null;
+  reqPayload?: InputJsonValue;
 
   @ApiProperty({
     required: false,
@@ -91,6 +91,28 @@ class KarzaVerifyAdhaarUpdateInput {
     nullable: true,
   })
   errorCode?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  statusCode?: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  reqType?: string;
 }
 
 export { KarzaVerifyAdhaarUpdateInput as KarzaVerifyAdhaarUpdateInput };

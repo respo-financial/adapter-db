@@ -2,11 +2,18 @@ import { Module, Scope } from "@nestjs/common";
 import { APP_INTERCEPTOR } from "@nestjs/core";
 import { MorganInterceptor, MorganModule } from "nest-morgan";
 import { UserModule } from "./user/user.module";
-import { UserDetailModule } from "./userDetail/userDetail.module";
-import { UserOnboardingStateModule } from "./userOnboardingState/userOnboardingState.module";
-import { CreditBureauDetailModule } from "./creditBureauDetail/creditBureauDetail.module";
-import { EmploymentDetailModule } from "./employmentDetail/employmentDetail.module";
-import { AddressDetailModule } from "./addressDetail/addressDetail.module";
+import { KarzaPanModule } from "./karzaPan/karzaPan.module";
+import { KarzaEmploymentModule } from "./karzaEmployment/karzaEmployment.module";
+import { HyperVergeAadhaarModule } from "./hyperVergeAadhaar/hyperVergeAadhaar.module";
+import { KarzaAdhaarVerifyModule } from "./karzaAdhaarVerify/karzaAdhaarVerify.module";
+import { KarzaVerifyAdhaarModule } from "./karzaVerifyAdhaar/karzaVerifyAdhaar.module";
+import { HyperVergeKycFailureHistoryModule } from "./hyperVergeKycFailureHistory/hyperVergeKycFailureHistory.module";
+import { HyperVergeOtpModule } from "./hyperVergeOtp/hyperVergeOtp.module";
+import { HyperVergeKycSuccessModule } from "./hyperVergeKycSuccess/hyperVergeKycSuccess.module";
+import { KnowlarityMakeCallModule } from "./knowlarityMakeCall/knowlarityMakeCall.module";
+import { ExperianCreditBureauModule } from "./experianCreditBureau/experianCreditBureau.module";
+import { KarzaCustomerDetailModule } from "./karzaCustomerDetail/karzaCustomerDetail.module";
+import { CashfreePaymentGatewayModule } from "./cashfreePaymentGateway/cashfreePaymentGateway.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
@@ -15,15 +22,27 @@ import { ServeStaticModule } from "@nestjs/serve-static";
 import { ServeStaticOptionsService } from "./serveStaticOptions.service";
 import { GraphQLModule } from "@nestjs/graphql";
 
+import { ACLModule } from "./auth/acl.module";
+import { AuthModule } from "./auth/auth.module";
+
 @Module({
   controllers: [],
   imports: [
+    ACLModule,
+    AuthModule,
     UserModule,
-    UserDetailModule,
-    UserOnboardingStateModule,
-    CreditBureauDetailModule,
-    EmploymentDetailModule,
-    AddressDetailModule,
+    KarzaPanModule,
+    KarzaEmploymentModule,
+    HyperVergeAadhaarModule,
+    KarzaAdhaarVerifyModule,
+    KarzaVerifyAdhaarModule,
+    HyperVergeKycFailureHistoryModule,
+    HyperVergeOtpModule,
+    HyperVergeKycSuccessModule,
+    KnowlarityMakeCallModule,
+    ExperianCreditBureauModule,
+    KarzaCustomerDetailModule,
+    CashfreePaymentGatewayModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,

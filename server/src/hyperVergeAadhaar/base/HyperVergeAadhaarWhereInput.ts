@@ -11,15 +11,47 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { StringFilter } from "../../util/StringFilter";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { Type } from "class-transformer";
 import { IsOptional } from "class-validator";
+import { StringFilter } from "../../util/StringFilter";
 import { IntFilter } from "../../util/IntFilter";
-import { JsonFilter } from "../../util/JsonFilter";
-import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 @InputType()
 class HyperVergeAadhaarWhereInput {
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  errorCode?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  reqType?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  hyperVergeStatus?: StringNullableFilter;
+
   @ApiProperty({
     required: false,
     type: StringFilter,
@@ -33,14 +65,14 @@ class HyperVergeAadhaarWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringFilter,
+    type: StringNullableFilter,
   })
-  @Type(() => StringFilter)
+  @Type(() => StringNullableFilter)
   @IsOptional()
-  @Field(() => StringFilter, {
+  @Field(() => StringNullableFilter, {
     nullable: true,
   })
-  errorMessage?: StringFilter;
+  errorMessage?: StringNullableFilter;
 
   @ApiProperty({
     required: false,
@@ -55,17 +87,6 @@ class HyperVergeAadhaarWhereInput {
 
   @ApiProperty({
     required: false,
-    type: JsonFilter,
-  })
-  @Type(() => JsonFilter)
-  @IsOptional()
-  @Field(() => JsonFilter, {
-    nullable: true,
-  })
-  reqPayload?: JsonFilter;
-
-  @ApiProperty({
-    required: false,
     type: StringFilter,
   })
   @Type(() => StringFilter)
@@ -77,36 +98,14 @@ class HyperVergeAadhaarWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringNullableFilter,
+    type: StringFilter,
   })
-  @Type(() => StringNullableFilter)
+  @Type(() => StringFilter)
   @IsOptional()
-  @Field(() => StringNullableFilter, {
+  @Field(() => StringFilter, {
     nullable: true,
   })
-  errorCode?: StringNullableFilter;
-
-  @ApiProperty({
-    required: false,
-    type: JsonFilter,
-  })
-  @Type(() => JsonFilter)
-  @IsOptional()
-  @Field(() => JsonFilter, {
-    nullable: true,
-  })
-  resPayload?: JsonFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringNullableFilter,
-  })
-  @Type(() => StringNullableFilter)
-  @IsOptional()
-  @Field(() => StringNullableFilter, {
-    nullable: true,
-  })
-  mobile?: StringNullableFilter;
+  adhaarNumber?: StringFilter;
 }
 
 export { HyperVergeAadhaarWhereInput as HyperVergeAadhaarWhereInput };
