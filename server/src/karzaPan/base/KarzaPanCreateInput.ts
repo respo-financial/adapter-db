@@ -82,6 +82,17 @@ class KarzaPanCreateInput {
   @IsInt()
   @Field(() => Number)
   customerId!: number;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  panName?: string | null;
 }
 
 export { KarzaPanCreateInput as KarzaPanCreateInput };

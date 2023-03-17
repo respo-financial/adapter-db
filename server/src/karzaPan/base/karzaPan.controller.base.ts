@@ -60,6 +60,7 @@ export class KarzaPanControllerBase {
         httpStatusCode: true,
         errorCode: true,
         customerId: true,
+        panName: true,
       },
     });
   }
@@ -91,6 +92,7 @@ export class KarzaPanControllerBase {
         httpStatusCode: true,
         errorCode: true,
         customerId: true,
+        panName: true,
       },
     });
   }
@@ -123,6 +125,7 @@ export class KarzaPanControllerBase {
         httpStatusCode: true,
         errorCode: true,
         customerId: true,
+        panName: true,
       },
     });
     if (result === null) {
@@ -164,6 +167,7 @@ export class KarzaPanControllerBase {
           httpStatusCode: true,
           errorCode: true,
           customerId: true,
+          panName: true,
         },
       });
     } catch (error) {
@@ -204,6 +208,7 @@ export class KarzaPanControllerBase {
           httpStatusCode: true,
           errorCode: true,
           customerId: true,
+          panName: true,
         },
       });
     } catch (error) {

@@ -11,4 +11,5 @@ export type KarzaPanOrderByInput = {
   httpStatusCode?: SortOrder;
   errorCode?: SortOrder;
   customerId?: SortOrder;
+  panName?: SortOrder;
 };

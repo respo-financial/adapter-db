@@ -107,6 +107,17 @@ class KarzaPanWhereInput {
     nullable: true,
   })
   customerId?: IntFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  panName?: StringNullableFilter;
 }
 
 export { KarzaPanWhereInput as KarzaPanWhereInput };

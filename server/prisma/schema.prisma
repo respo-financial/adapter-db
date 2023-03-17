@@ -29,6 +29,7 @@ model KarzaPan {
   httpStatusCode String?
   errorCode      String?
   customerId     Int      @unique
+  panName        String?
 }
 
 model KarzaEmployment {
