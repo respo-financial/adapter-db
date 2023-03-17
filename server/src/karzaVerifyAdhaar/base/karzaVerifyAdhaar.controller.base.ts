@@ -52,16 +52,18 @@ export class KarzaVerifyAdhaarControllerBase {
     return await this.service.create({
       data: data,
       select: {
+        errorMessage: true,
         id: true,
         createdAt: true,
         updatedAt: true,
         customerId: true,
         adhaarNumber: true,
-        reqPayload: true,
         resPayload: true,
         httpStatusCode: true,
-        errorMessage: true,
+        reqPayload: true,
         errorCode: true,
+        statusCode: true,
+        reqType: true,
       },
     });
   }
@@ -83,16 +85,18 @@ export class KarzaVerifyAdhaarControllerBase {
     return this.service.findMany({
       ...args,
       select: {
+        errorMessage: true,
         id: true,
         createdAt: true,
         updatedAt: true,
         customerId: true,
         adhaarNumber: true,
-        reqPayload: true,
         resPayload: true,
         httpStatusCode: true,
-        errorMessage: true,
+        reqPayload: true,
         errorCode: true,
+        statusCode: true,
+        reqType: true,
       },
     });
   }
@@ -115,16 +119,18 @@ export class KarzaVerifyAdhaarControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        errorMessage: true,
         id: true,
         createdAt: true,
         updatedAt: true,
         customerId: true,
         adhaarNumber: true,
-        reqPayload: true,
         resPayload: true,
         httpStatusCode: true,
-        errorMessage: true,
+        reqPayload: true,
         errorCode: true,
+        statusCode: true,
+        reqType: true,
       },
     });
     if (result === null) {
@@ -156,16 +162,18 @@ export class KarzaVerifyAdhaarControllerBase {
         where: params,
         data: data,
         select: {
+          errorMessage: true,
           id: true,
           createdAt: true,
           updatedAt: true,
           customerId: true,
           adhaarNumber: true,
-          reqPayload: true,
           resPayload: true,
           httpStatusCode: true,
-          errorMessage: true,
+          reqPayload: true,
           errorCode: true,
+          statusCode: true,
+          reqType: true,
         },
       });
     } catch (error) {
@@ -196,16 +204,18 @@ export class KarzaVerifyAdhaarControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          errorMessage: true,
           id: true,
           createdAt: true,
           updatedAt: true,
           customerId: true,
           adhaarNumber: true,
-          reqPayload: true,
           resPayload: true,
           httpStatusCode: true,
-          errorMessage: true,
+          reqPayload: true,
           errorCode: true,
+          statusCode: true,
+          reqType: true,
         },
       });
     } catch (error) {

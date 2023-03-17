@@ -13,13 +13,15 @@ export const HyperVergeAadhaarCreate = (
   return (
     <Create {...props}>
       <SimpleForm>
+        <TextInput label="errorCode" source="errorCode" />
+        <TextInput label="reqType" source="reqType" />
+        <TextInput label="hyperVergeStatus" source="hyperVergeStatus" />
         <TextInput label="errorMessage" source="errorMessage" />
         <NumberInput step={1} label="customerId" source="customerId" />
         <div />
         <TextInput label="httpStatusCode" source="httpStatusCode" />
-        <TextInput label="errorCode" source="errorCode" />
         <div />
-        <TextInput label="mobile" source="mobile" />
+        <TextInput label="adhaarNumber" source="adhaarNumber" />
       </SimpleForm>
     </Create>
   );

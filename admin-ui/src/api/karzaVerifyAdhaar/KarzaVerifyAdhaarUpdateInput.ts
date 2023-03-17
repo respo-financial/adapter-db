@@ -1,11 +1,13 @@
 import { InputJsonValue } from "../../types";
 
 export type KarzaVerifyAdhaarUpdateInput = {
+  errorMessage?: string | null;
   customerId?: number;
   adhaarNumber?: number;
-  reqPayload?: InputJsonValue;
   resPayload?: InputJsonValue;
-  httpStatusCode?: number | null;
-  errorMessage?: string | null;
+  httpStatusCode?: number;
+  reqPayload?: InputJsonValue;
   errorCode?: string | null;
+  statusCode?: string;
+  reqType?: string;
 };

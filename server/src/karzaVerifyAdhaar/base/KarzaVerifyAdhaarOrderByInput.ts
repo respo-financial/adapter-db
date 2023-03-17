@@ -25,6 +25,15 @@ class KarzaVerifyAdhaarOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+  errorMessage?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
   id?: SortOrder;
 
   @ApiProperty({
@@ -70,15 +79,6 @@ class KarzaVerifyAdhaarOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  reqPayload?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["asc", "desc"],
-  })
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
   resPayload?: SortOrder;
 
   @ApiProperty({
@@ -97,7 +97,7 @@ class KarzaVerifyAdhaarOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  errorMessage?: SortOrder;
+  reqPayload?: SortOrder;
 
   @ApiProperty({
     required: false,
@@ -107,6 +107,24 @@ class KarzaVerifyAdhaarOrderByInput {
     nullable: true,
   })
   errorCode?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  statusCode?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  reqType?: SortOrder;
 }
 
 export { KarzaVerifyAdhaarOrderByInput as KarzaVerifyAdhaarOrderByInput };

@@ -19,46 +19,54 @@ import { KarzaVerifyAdhaarService } from "../karzaVerifyAdhaar.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  errorMessage: "exampleErrorMessage",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
   customerId: 42,
   adhaarNumber: 42,
   httpStatusCode: 42,
-  errorMessage: "exampleErrorMessage",
   errorCode: "exampleErrorCode",
+  statusCode: "exampleStatusCode",
+  reqType: "exampleReqType",
 };
 const CREATE_RESULT = {
+  errorMessage: "exampleErrorMessage",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
   customerId: 42,
   adhaarNumber: 42,
   httpStatusCode: 42,
-  errorMessage: "exampleErrorMessage",
   errorCode: "exampleErrorCode",
+  statusCode: "exampleStatusCode",
+  reqType: "exampleReqType",
 };
 const FIND_MANY_RESULT = [
   {
+    errorMessage: "exampleErrorMessage",
     id: "exampleId",
     createdAt: new Date(),
     updatedAt: new Date(),
     customerId: 42,
     adhaarNumber: 42,
     httpStatusCode: 42,
-    errorMessage: "exampleErrorMessage",
     errorCode: "exampleErrorCode",
+    statusCode: "exampleStatusCode",
+    reqType: "exampleReqType",
   },
 ];
 const FIND_ONE_RESULT = {
+  errorMessage: "exampleErrorMessage",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
   customerId: 42,
   adhaarNumber: 42,
   httpStatusCode: 42,
-  errorMessage: "exampleErrorMessage",
   errorCode: "exampleErrorCode",
+  statusCode: "exampleStatusCode",
+  reqType: "exampleReqType",
 };
 
 const service = {

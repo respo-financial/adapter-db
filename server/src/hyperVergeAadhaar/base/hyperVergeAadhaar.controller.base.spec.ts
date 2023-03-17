@@ -19,46 +19,54 @@ import { HyperVergeAadhaarService } from "../hyperVergeAadhaar.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  errorCode: "exampleErrorCode",
+  reqType: "exampleReqType",
+  hyperVergeStatus: "exampleHyperVergeStatus",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
   errorMessage: "exampleErrorMessage",
   customerId: 42,
   httpStatusCode: "exampleHttpStatusCode",
-  errorCode: "exampleErrorCode",
-  mobile: "exampleMobile",
+  adhaarNumber: "exampleAdhaarNumber",
 };
 const CREATE_RESULT = {
+  errorCode: "exampleErrorCode",
+  reqType: "exampleReqType",
+  hyperVergeStatus: "exampleHyperVergeStatus",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
   errorMessage: "exampleErrorMessage",
   customerId: 42,
   httpStatusCode: "exampleHttpStatusCode",
-  errorCode: "exampleErrorCode",
-  mobile: "exampleMobile",
+  adhaarNumber: "exampleAdhaarNumber",
 };
 const FIND_MANY_RESULT = [
   {
+    errorCode: "exampleErrorCode",
+    reqType: "exampleReqType",
+    hyperVergeStatus: "exampleHyperVergeStatus",
     id: "exampleId",
     createdAt: new Date(),
     updatedAt: new Date(),
     errorMessage: "exampleErrorMessage",
     customerId: 42,
     httpStatusCode: "exampleHttpStatusCode",
-    errorCode: "exampleErrorCode",
-    mobile: "exampleMobile",
+    adhaarNumber: "exampleAdhaarNumber",
   },
 ];
 const FIND_ONE_RESULT = {
+  errorCode: "exampleErrorCode",
+  reqType: "exampleReqType",
+  hyperVergeStatus: "exampleHyperVergeStatus",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
   errorMessage: "exampleErrorMessage",
   customerId: 42,
   httpStatusCode: "exampleHttpStatusCode",
-  errorCode: "exampleErrorCode",
-  mobile: "exampleMobile",
+  adhaarNumber: "exampleAdhaarNumber",
 };
 
 const service = {
