@@ -1,10 +1,11 @@
 import { InputJsonValue } from "../../types";
 
 export type KarzaEmploymentUpdateInput = {
-  reqPayload?: InputJsonValue;
   resPayload?: InputJsonValue;
-  customerId?: number;
-  errorCode?: string | null;
   errorMessage?: string | null;
-  httpStatusCode?: string | null;
+  httpStatusCode?: string;
+  reqPayload?: InputJsonValue;
+  karzaStatusCode?: string | null;
+  customerId?: number;
+  karzaStatus?: string | null;
 };

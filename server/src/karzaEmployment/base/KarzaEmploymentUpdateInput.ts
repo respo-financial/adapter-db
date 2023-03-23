@@ -11,7 +11,7 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsJSON, IsOptional, IsInt, IsString } from "class-validator";
+import { IsJSON, IsOptional, IsString, IsInt } from "class-validator";
 import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
 
@@ -25,39 +25,7 @@ class KarzaEmploymentUpdateInput {
   @Field(() => GraphQLJSON, {
     nullable: true,
   })
-  reqPayload?: InputJsonValue;
-
-  @ApiProperty({
-    required: false,
-  })
-  @IsJSON()
-  @IsOptional()
-  @Field(() => GraphQLJSON, {
-    nullable: true,
-  })
   resPayload?: InputJsonValue;
-
-  @ApiProperty({
-    required: false,
-    type: Number,
-  })
-  @IsInt()
-  @IsOptional()
-  @Field(() => Number, {
-    nullable: true,
-  })
-  customerId?: number;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  errorCode?: string | null;
 
   @ApiProperty({
     required: false,
@@ -79,7 +47,50 @@ class KarzaEmploymentUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  httpStatusCode?: string | null;
+  httpStatusCode?: string;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsJSON()
+  @IsOptional()
+  @Field(() => GraphQLJSON, {
+    nullable: true,
+  })
+  reqPayload?: InputJsonValue;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  karzaStatusCode?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  customerId?: number;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  karzaStatus?: string | null;
 }
 
 export { KarzaEmploymentUpdateInput as KarzaEmploymentUpdateInput };

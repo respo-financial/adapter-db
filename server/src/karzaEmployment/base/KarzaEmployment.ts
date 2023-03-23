@@ -11,13 +11,57 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsDate, IsJSON, IsInt, IsOptional } from "class-validator";
-import { Type } from "class-transformer";
+import { IsJSON, IsString, IsOptional, IsDate, IsInt } from "class-validator";
 import { GraphQLJSON } from "graphql-type-json";
 import { JsonValue } from "type-fest";
+import { Type } from "class-transformer";
 
 @ObjectType()
 class KarzaEmployment {
+  @ApiProperty({
+    required: true,
+  })
+  @IsJSON()
+  @Field(() => GraphQLJSON)
+  resPayload!: JsonValue;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  errorMessage!: string | null;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  httpStatusCode!: string;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsJSON()
+  @Field(() => GraphQLJSON)
+  reqPayload!: JsonValue;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  karzaStatusCode!: string | null;
+
   @ApiProperty({
     required: true,
     type: String,
@@ -44,20 +88,6 @@ class KarzaEmployment {
 
   @ApiProperty({
     required: true,
-  })
-  @IsJSON()
-  @Field(() => GraphQLJSON)
-  reqPayload!: JsonValue;
-
-  @ApiProperty({
-    required: true,
-  })
-  @IsJSON()
-  @Field(() => GraphQLJSON)
-  resPayload!: JsonValue;
-
-  @ApiProperty({
-    required: true,
     type: Number,
   })
   @IsInt()
@@ -73,29 +103,7 @@ class KarzaEmployment {
   @Field(() => String, {
     nullable: true,
   })
-  errorCode!: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  errorMessage!: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  httpStatusCode!: string | null;
+  karzaStatus!: string | null;
 }
 
 export { KarzaEmployment as KarzaEmployment };

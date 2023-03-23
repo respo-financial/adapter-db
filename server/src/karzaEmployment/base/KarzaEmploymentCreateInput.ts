@@ -11,7 +11,7 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsJSON, IsInt, IsString, IsOptional } from "class-validator";
+import { IsJSON, IsString, IsOptional, IsInt } from "class-validator";
 import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
 
@@ -22,14 +22,44 @@ class KarzaEmploymentCreateInput {
   })
   @IsJSON()
   @Field(() => GraphQLJSON)
-  reqPayload!: InputJsonValue;
+  resPayload!: InputJsonValue;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  errorMessage?: string | null;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  httpStatusCode!: string;
 
   @ApiProperty({
     required: true,
   })
   @IsJSON()
   @Field(() => GraphQLJSON)
-  resPayload!: InputJsonValue;
+  reqPayload!: InputJsonValue;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  karzaStatusCode?: string | null;
 
   @ApiProperty({
     required: true,
@@ -48,29 +78,7 @@ class KarzaEmploymentCreateInput {
   @Field(() => String, {
     nullable: true,
   })
-  errorCode?: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  errorMessage?: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  httpStatusCode?: string | null;
+  karzaStatus?: string | null;
 }
 
 export { KarzaEmploymentCreateInput as KarzaEmploymentCreateInput };

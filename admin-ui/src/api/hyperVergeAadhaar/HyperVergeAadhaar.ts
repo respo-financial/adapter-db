@@ -1,9 +1,6 @@
 import { JsonValue } from "type-fest";
 
 export type HyperVergeAadhaar = {
-  errorCode: string | null;
-  reqType: string;
-  hyperVergeStatus: string | null;
   id: string;
   createdAt: Date;
   updatedAt: Date;
@@ -13,4 +10,7 @@ export type HyperVergeAadhaar = {
   httpStatusCode: string;
   resPayload: JsonValue;
   adhaarNumber: string;
+  errorCode: string | null;
+  reqType: string;
+  hyperVergeStatus: string | null;
 };
