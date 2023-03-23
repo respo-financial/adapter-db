@@ -1,6 +1,6 @@
 {
-  "short_name": "Adapter service",
-  "name": "Adapter service",
+  "short_name": "user-service",
+  "name": "user-service",
   "icons": [
     {
       "src": "favicon.ico",
