@@ -9,27 +9,23 @@ import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
-import { UserDetailList } from "./userDetail/UserDetailList";
-import { UserDetailCreate } from "./userDetail/UserDetailCreate";
-import { UserDetailEdit } from "./userDetail/UserDetailEdit";
-import { UserDetailShow } from "./userDetail/UserDetailShow";
-import { UserOnboardingStateList } from "./userOnboardingState/UserOnboardingStateList";
-import { UserOnboardingStateCreate } from "./userOnboardingState/UserOnboardingStateCreate";
-import { UserOnboardingStateEdit } from "./userOnboardingState/UserOnboardingStateEdit";
-import { UserOnboardingStateShow } from "./userOnboardingState/UserOnboardingStateShow";
-import { CreditBureauDetailList } from "./creditBureauDetail/CreditBureauDetailList";
-import { CreditBureauDetailCreate } from "./creditBureauDetail/CreditBureauDetailCreate";
-import { CreditBureauDetailEdit } from "./creditBureauDetail/CreditBureauDetailEdit";
-import { CreditBureauDetailShow } from "./creditBureauDetail/CreditBureauDetailShow";
-import { EmploymentDetailList } from "./employmentDetail/EmploymentDetailList";
-import { EmploymentDetailCreate } from "./employmentDetail/EmploymentDetailCreate";
-import { EmploymentDetailEdit } from "./employmentDetail/EmploymentDetailEdit";
-import { EmploymentDetailShow } from "./employmentDetail/EmploymentDetailShow";
-import { AddressDetailList } from "./addressDetail/AddressDetailList";
-import { AddressDetailCreate } from "./addressDetail/AddressDetailCreate";
-import { AddressDetailEdit } from "./addressDetail/AddressDetailEdit";
-import { AddressDetailShow } from "./addressDetail/AddressDetailShow";
-import { httpAuthProvider } from "./auth-provider/ra-auth-http";
+import { OrderList } from "./order/OrderList";
+import { OrderCreate } from "./order/OrderCreate";
+import { OrderEdit } from "./order/OrderEdit";
+import { OrderShow } from "./order/OrderShow";
+import { CustomerList } from "./customer/CustomerList";
+import { CustomerCreate } from "./customer/CustomerCreate";
+import { CustomerEdit } from "./customer/CustomerEdit";
+import { CustomerShow } from "./customer/CustomerShow";
+import { AddressList } from "./address/AddressList";
+import { AddressCreate } from "./address/AddressCreate";
+import { AddressEdit } from "./address/AddressEdit";
+import { AddressShow } from "./address/AddressShow";
+import { ProductList } from "./product/ProductList";
+import { ProductCreate } from "./product/ProductCreate";
+import { ProductEdit } from "./product/ProductEdit";
+import { ProductShow } from "./product/ProductShow";
+import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
   const [dataProvider, setDataProvider] = useState<DataProvider | null>(null);
@@ -48,9 +44,9 @@ const App = (): React.ReactElement => {
   return (
     <div className="App">
       <Admin
-        title={"user-service"}
+        title={"Sample service"}
         dataProvider={dataProvider}
-        authProvider={httpAuthProvider}
+        authProvider={jwtAuthProvider}
         theme={theme}
         dashboard={Dashboard}
         loginPage={Login}
@@ -63,39 +59,32 @@ const App = (): React.ReactElement => {
           show={UserShow}
         />
         <Resource
-          name="UserDetail"
-          list={UserDetailList}
-          edit={UserDetailEdit}
-          create={UserDetailCreate}
-          show={UserDetailShow}
+          name="Order"
+          list={OrderList}
+          edit={OrderEdit}
+          create={OrderCreate}
+          show={OrderShow}
         />
         <Resource
-          name="UserOnboardingState"
-          list={UserOnboardingStateList}
-          edit={UserOnboardingStateEdit}
-          create={UserOnboardingStateCreate}
-          show={UserOnboardingStateShow}
+          name="Customer"
+          list={CustomerList}
+          edit={CustomerEdit}
+          create={CustomerCreate}
+          show={CustomerShow}
         />
         <Resource
-          name="CreditBureauDetail"
-          list={CreditBureauDetailList}
-          edit={CreditBureauDetailEdit}
-          create={CreditBureauDetailCreate}
-          show={CreditBureauDetailShow}
+          name="Address"
+          list={AddressList}
+          edit={AddressEdit}
+          create={AddressCreate}
+          show={AddressShow}
         />
         <Resource
-          name="EmploymentDetail"
-          list={EmploymentDetailList}
-          edit={EmploymentDetailEdit}
-          create={EmploymentDetailCreate}
-          show={EmploymentDetailShow}
-        />
-        <Resource
-          name="AddressDetail"
-          list={AddressDetailList}
-          edit={AddressDetailEdit}
-          create={AddressDetailCreate}
-          show={AddressDetailShow}
+          name="Product"
+          list={ProductList}
+          edit={ProductEdit}
+          create={ProductCreate}
+          show={ProductShow}
         />
       </Admin>
     </div>
