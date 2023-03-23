@@ -29,6 +29,18 @@ class ExperianCreditBureauWhereInput {
   @Field(() => StringNullableFilter, {
     nullable: true,
   })
+
+  httpStatusCode?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
   errorMessage?: StringNullableFilter;
 
   @ApiProperty({
@@ -117,6 +129,7 @@ class ExperianCreditBureauWhereInput {
   @Field(() => StringNullableFilter, {
     nullable: true,
   })
+
   experianStatusCode?: StringNullableFilter;
 }
 

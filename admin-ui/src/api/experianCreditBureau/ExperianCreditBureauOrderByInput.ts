@@ -1,6 +1,7 @@
 import { SortOrder } from "../../util/SortOrder";
 
 export type ExperianCreditBureauOrderByInput = {
+  httpStatusCode?: SortOrder;
   errorMessage?: SortOrder;
   errorCode?: SortOrder;
   customerId?: SortOrder;
@@ -10,6 +11,5 @@ export type ExperianCreditBureauOrderByInput = {
   createdAt?: SortOrder;
   updatedAt?: SortOrder;
   reqType?: SortOrder;
-  httpStatusCode?: SortOrder;
   experianStatusCode?: SortOrder;
 };

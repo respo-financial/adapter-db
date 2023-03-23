@@ -86,6 +86,7 @@ export class ExperianCreditBureauControllerBase {
     return this.service.findMany({
       ...args,
       select: {
+        httpStatusCode: true,
         errorMessage: true,
         errorCode: true,
         customerId: true,
@@ -161,6 +162,7 @@ export class ExperianCreditBureauControllerBase {
         where: params,
         data: data,
         select: {
+          httpStatusCode: true,
           errorMessage: true,
           errorCode: true,
           customerId: true,
@@ -170,7 +172,6 @@ export class ExperianCreditBureauControllerBase {
           createdAt: true,
           updatedAt: true,
           reqType: true,
-          httpStatusCode: true,
           experianStatusCode: true,
         },
       });

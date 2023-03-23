@@ -14,6 +14,7 @@ export const ExperianCreditBureauList = (
       pagination={<Pagination />}
     >
       <Datagrid rowClick="show">
+        <TextField label="httpStatusCode" source="httpStatusCode" />
         <TextField label="errorMessage" source="errorMessage" />
         <TextField label="errorCode" source="errorCode" />
         <TextField label="customerId" source="customerId" />

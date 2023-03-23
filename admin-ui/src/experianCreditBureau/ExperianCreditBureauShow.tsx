@@ -13,6 +13,7 @@ export const ExperianCreditBureauShow = (
   return (
     <Show {...props}>
       <SimpleShowLayout>
+        <TextField label="httpStatusCode" source="httpStatusCode" />
         <TextField label="errorMessage" source="errorMessage" />
         <TextField label="errorCode" source="errorCode" />
         <TextField label="customerId" source="customerId" />

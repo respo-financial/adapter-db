@@ -19,6 +19,7 @@ import { ExperianCreditBureauService } from "../experianCreditBureau.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  httpStatusCode: "exampleHttpStatusCode",
   errorMessage: "exampleErrorMessage",
   errorCode: "exampleErrorCode",
   customerId: 42,
@@ -54,6 +55,7 @@ const FIND_MANY_RESULT = [
   },
 ];
 const FIND_ONE_RESULT = {
+  httpStatusCode: "exampleHttpStatusCode",
   errorMessage: "exampleErrorMessage",
   errorCode: "exampleErrorCode",
   customerId: 42,
@@ -61,7 +63,6 @@ const FIND_ONE_RESULT = {
   createdAt: new Date(),
   updatedAt: new Date(),
   reqType: "exampleReqType",
-  httpStatusCode: "exampleHttpStatusCode",
   experianStatusCode: "exampleExperianStatusCode",
 };
 
