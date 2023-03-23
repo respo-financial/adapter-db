@@ -4,6 +4,7 @@ import { JsonFilter } from "../../util/JsonFilter";
 import { StringFilter } from "../../util/StringFilter";
 
 export type ExperianCreditBureauWhereInput = {
+  httpStatusCode?: StringNullableFilter;
   errorMessage?: StringNullableFilter;
   errorCode?: StringNullableFilter;
   customerId?: IntFilter;
@@ -11,6 +12,5 @@ export type ExperianCreditBureauWhereInput = {
   resPayload?: JsonFilter;
   id?: StringFilter;
   reqType?: StringNullableFilter;
-  httpStatusCode?: StringNullableFilter;
   experianStatusCode?: StringNullableFilter;
 };

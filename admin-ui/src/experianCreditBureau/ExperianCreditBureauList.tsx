@@ -24,7 +24,6 @@ export const ExperianCreditBureauList = (
         <DateField source="createdAt" label="Created At" />
         <DateField source="updatedAt" label="Updated At" />
         <TextField label="reqType" source="reqType" />
-        <TextField label="httpStatusCode" source="httpStatusCode" />
         <TextField label="experianStatusCode" source="experianStatusCode" />
       </Datagrid>
     </List>

@@ -1,6 +1,5 @@
 import { ExperianCreditBureau as TExperianCreditBureau } from "../api/experianCreditBureau/ExperianCreditBureau";
 
-
 export const EXPERIANCREDITBUREAU_TITLE_FIELD = "httpStatusCode";
 
 export const ExperianCreditBureauTitle = (
