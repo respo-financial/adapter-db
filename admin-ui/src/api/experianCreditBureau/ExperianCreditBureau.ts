@@ -1,7 +1,6 @@
 import { JsonValue } from "type-fest";
 
 export type ExperianCreditBureau = {
-  httpStatusCode: string | null;
   errorMessage: string | null;
   errorCode: string | null;
   customerId: number;
@@ -11,5 +10,6 @@ export type ExperianCreditBureau = {
   createdAt: Date;
   updatedAt: Date;
   reqType: string | null;
+  httpStatusCode: string | null;
   experianStatusCode: string | null;
 };

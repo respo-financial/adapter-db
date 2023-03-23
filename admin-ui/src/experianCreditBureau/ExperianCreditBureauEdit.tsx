@@ -20,6 +20,7 @@ export const ExperianCreditBureauEdit = (
         <div />
         <div />
         <TextInput label="reqType" source="reqType" />
+        <TextInput label="httpStatusCode" source="httpStatusCode" />
         <TextInput label="experianStatusCode" source="experianStatusCode" />
       </SimpleForm>
     </Edit>

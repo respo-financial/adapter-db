@@ -27,6 +27,7 @@ class ExperianCreditBureau {
   @Field(() => String, {
     nullable: true,
   })
+
   httpStatusCode!: string | null;
 
   @ApiProperty({
@@ -110,6 +111,17 @@ class ExperianCreditBureau {
     nullable: true,
   })
   reqType!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  httpStatusCode!: string | null;
 
   @ApiProperty({
     required: false,

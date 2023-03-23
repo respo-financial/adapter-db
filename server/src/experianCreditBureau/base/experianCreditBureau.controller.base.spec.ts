@@ -27,10 +27,10 @@ const CREATE_INPUT = {
   createdAt: new Date(),
   updatedAt: new Date(),
   reqType: "exampleReqType",
+  httpStatusCode: "exampleHttpStatusCode",
   experianStatusCode: "exampleExperianStatusCode",
 };
 const CREATE_RESULT = {
-  httpStatusCode: "exampleHttpStatusCode",
   errorMessage: "exampleErrorMessage",
   errorCode: "exampleErrorCode",
   customerId: 42,
@@ -38,11 +38,11 @@ const CREATE_RESULT = {
   createdAt: new Date(),
   updatedAt: new Date(),
   reqType: "exampleReqType",
+  httpStatusCode: "exampleHttpStatusCode",
   experianStatusCode: "exampleExperianStatusCode",
 };
 const FIND_MANY_RESULT = [
   {
-    httpStatusCode: "exampleHttpStatusCode",
     errorMessage: "exampleErrorMessage",
     errorCode: "exampleErrorCode",
     customerId: 42,
@@ -50,6 +50,7 @@ const FIND_MANY_RESULT = [
     createdAt: new Date(),
     updatedAt: new Date(),
     reqType: "exampleReqType",
+    httpStatusCode: "exampleHttpStatusCode",
     experianStatusCode: "exampleExperianStatusCode",
   },
 ];

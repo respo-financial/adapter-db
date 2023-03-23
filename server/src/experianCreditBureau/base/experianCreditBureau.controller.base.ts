@@ -52,7 +52,6 @@ export class ExperianCreditBureauControllerBase {
     return await this.service.create({
       data: data,
       select: {
-        httpStatusCode: true,
         errorMessage: true,
         errorCode: true,
         customerId: true,
@@ -62,6 +61,7 @@ export class ExperianCreditBureauControllerBase {
         createdAt: true,
         updatedAt: true,
         reqType: true,
+        httpStatusCode: true,
         experianStatusCode: true,
       },
     });
@@ -96,6 +96,7 @@ export class ExperianCreditBureauControllerBase {
         createdAt: true,
         updatedAt: true,
         reqType: true,
+        httpStatusCode: true,
         experianStatusCode: true,
       },
     });
@@ -119,7 +120,6 @@ export class ExperianCreditBureauControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
-        httpStatusCode: true,
         errorMessage: true,
         errorCode: true,
         customerId: true,
@@ -129,6 +129,7 @@ export class ExperianCreditBureauControllerBase {
         createdAt: true,
         updatedAt: true,
         reqType: true,
+        httpStatusCode: true,
         experianStatusCode: true,
       },
     });
@@ -202,7 +203,6 @@ export class ExperianCreditBureauControllerBase {
       return await this.service.delete({
         where: params,
         select: {
-          httpStatusCode: true,
           errorMessage: true,
           errorCode: true,
           customerId: true,
@@ -212,6 +212,7 @@ export class ExperianCreditBureauControllerBase {
           createdAt: true,
           updatedAt: true,
           reqType: true,
+          httpStatusCode: true,
           experianStatusCode: true,
         },
       });
