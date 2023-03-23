@@ -18,50 +18,161 @@ model User {
   roles     Json
 }
 
-model Order {
-  id         String    @id @default(cuid())
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  quantity   Int?
-  discount   Float?
-  totalPrice Int?
-  customer   Customer? @relation(fields: [customerId], references: [id])
-  customerId String?
-  product    Product?  @relation(fields: [productId], references: [id])
-  productId  String?
+model UserDetail {
+  id                      String               @id @default(cuid())
+  createdAt               DateTime             @default(now())
+  updatedAt               DateTime             @updatedAt
+  userId                  String               @unique
+  isPersonalEmailVerified Boolean?
+  mobileNumber            String               @unique
+  userProvidedFirstName   String?
+  userProvidedLastName    String?
+  aadhaarName             String?
+  aadhaarDob              DateTime?
+  panName                 String?
+  pan                     String?              @unique
+  panDob                  DateTime?
+  firstName               String?
+  lastName                String?
+  personalEmail           String?              @unique
+  creditBureauDetails     CreditBureauDetail[]
+  addressDetails          AddressDetail[]
+  employmentDetails       EmploymentDetail[]
+  userOnboardingState     UserOnboardingState? @relation(fields: [userOnboardingStateId], references: [id])
+  userOnboardingStateId   String?
 }
 
-model Customer {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  firstName String?
-  lastName  String?
-  email     String?
-  phone     String?
-  orders    Order[]
-  address   Address? @relation(fields: [addressId], references: [id])
-  addressId String?
+model UserOnboardingState {
+  isUserProvidedNameValid    Boolean?
+  id                         String                                    @id @default(cuid())
+  createdAt                  DateTime                                  @default(now())
+  updatedAt                  DateTime                                  @updatedAt
+  employmentType             EnumUserOnboardingStateEmploymentType?
+  isEmploymentEmailValidated Boolean?
+  apNameMatchStatus          EnumUserOnboardingStateApNameMatchStatus?
+  isAddressValid             Boolean?
+  dobMatchStatus             EnumUserOnboardingStateDobMatchStatus?
+  inApprovedRegion           Boolean?
+  inBlacklistedRegion        Boolean?
+  isPennytransferSuccess     Boolean?
+  isEnachCreated             Boolean?
+  isSelfieMatchSuccess       Boolean?
+  isLoanAgreementSigned      Boolean?
+  isCbSuccess                Boolean?
+  isPanValid                 Boolean?
+  l1Status                   EnumUserOnboardingStateL1Status?
+  l2Status                   EnumUserOnboardingStateL2Status?
+  combinedStatus             EnumUserOnboardingStateCombinedStatus?
+  isPersonalEmailVerified    Boolean?
+  userDetails                UserDetail[]
 }
 
-model Address {
-  id        String     @id @default(cuid())
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  address_1 String?
-  address_2 String?
-  city      String?
-  state     String?
-  zip       Int?
-  customers Customer[]
+model CreditBureauDetail {
+  provider         EnumCreditBureauDetailProvider?
+  cbReportFileName String?
+  createdAt        DateTime                        @default(now())
+  updatedAt        DateTime                        @updatedAt
+  id               String                          @id @default(cuid())
+  reportPullDate   DateTime?
+  cbUserId         String?
+  userDetail       UserDetail?                     @relation(fields: [userDetailId], references: [id])
+  userDetailId     String?
 }
 
-model Product {
-  id          String   @id @default(cuid())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  name        String?
-  itemPrice   Float?
-  description String?
-  orders      Order[]
+model EmploymentDetail {
+  employmentVerificationProvider EnumEmploymentDetailEmploymentVerificationProvider?
+  isEmploymentEmailValid         String?
+  employmentVerificationStatus   EnumEmploymentDetailEmploymentVerificationStatus?
+  email                          String?
+  id                             String                                              @id @default(cuid())
+  createdAt                      DateTime                                            @default(now())
+  updatedAt                      DateTime                                            @updatedAt
+  companyName                    String?
+  isOthers                       Boolean?
+  userDetail                     UserDetail?                                         @relation(fields: [userDetailId], references: [id])
+  userDetailId                   String?
+}
+
+model AddressDetail {
+  id                  String                        @id @default(cuid())
+  createdAt           DateTime                      @default(now())
+  updatedAt           DateTime                      @updatedAt
+  inBlacklistedRegion Boolean?
+  state               String?
+  country             String?
+  latitude            String?
+  longitude           String?
+  userDetail          UserDetail?                   @relation(fields: [userDetailId], references: [id])
+  userDetailId        String?
+  pincode             String?
+  addressType         EnumAddressDetailAddressType?
+  city                String?
+  addressLine         String?
+  inApprovedRegion    Boolean?
+}
+
+enum EnumUserOnboardingStateEmploymentType {
+  SALARIED
+  SELF_EMPLOYED
+  STUDENT
+  PROFESSIONAL
+}
+
+enum EnumUserOnboardingStateApNameMatchStatus {
+  success
+  failed
+  manual
+}
+
+enum EnumUserOnboardingStateDobMatchStatus {
+  success
+  failed
+  manual
+}
+
+enum EnumUserOnboardingStateL1Status {
+  Accept
+  Manual
+  Waitlist
+  Fail
+  Reject
+  Refer
+}
+
+enum EnumUserOnboardingStateL2Status {
+  Accept
+  Manual
+  Waitlist
+  Fail
+  Reject
+}
+
+enum EnumUserOnboardingStateCombinedStatus {
+  Accept
+  Manual
+  Waitlist
+  Fail
+  Reject
+}
+
+enum EnumCreditBureauDetailProvider {
+  experian
+  equifax
+  cibil
+}
+
+enum EnumEmploymentDetailEmploymentVerificationProvider {
+  zype
+  karza
+}
+
+enum EnumEmploymentDetailEmploymentVerificationStatus {
+  verified
+  notVerified
+  Manual
+}
+
+enum EnumAddressDetailAddressType {
+  permanent
+  communication
 }

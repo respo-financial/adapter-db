@@ -2,10 +2,11 @@ import { Module, Scope } from "@nestjs/common";
 import { APP_INTERCEPTOR } from "@nestjs/core";
 import { MorganInterceptor, MorganModule } from "nest-morgan";
 import { UserModule } from "./user/user.module";
-import { OrderModule } from "./order/order.module";
-import { CustomerModule } from "./customer/customer.module";
-import { AddressModule } from "./address/address.module";
-import { ProductModule } from "./product/product.module";
+import { UserDetailModule } from "./userDetail/userDetail.module";
+import { UserOnboardingStateModule } from "./userOnboardingState/userOnboardingState.module";
+import { CreditBureauDetailModule } from "./creditBureauDetail/creditBureauDetail.module";
+import { EmploymentDetailModule } from "./employmentDetail/employmentDetail.module";
+import { AddressDetailModule } from "./addressDetail/addressDetail.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
@@ -14,19 +15,15 @@ import { ServeStaticModule } from "@nestjs/serve-static";
 import { ServeStaticOptionsService } from "./serveStaticOptions.service";
 import { GraphQLModule } from "@nestjs/graphql";
 
-import { ACLModule } from "./auth/acl.module";
-import { AuthModule } from "./auth/auth.module";
-
 @Module({
   controllers: [],
   imports: [
-    ACLModule,
-    AuthModule,
     UserModule,
-    OrderModule,
-    CustomerModule,
-    AddressModule,
-    ProductModule,
+    UserDetailModule,
+    UserOnboardingStateModule,
+    CreditBureauDetailModule,
+    EmploymentDetailModule,
+    AddressDetailModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,
