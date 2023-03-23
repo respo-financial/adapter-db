@@ -13,18 +13,18 @@ export const KnowlarityMakeCallShow = (
   return (
     <Show {...props}>
       <SimpleShowLayout>
+        <TextField label="agentId" source="agentId" />
+        <TextField label="agentMobileNumber" source="agentMobileNumber" />
+        <TextField label="resPayload" source="resPayload" />
+        <TextField label="customerId" source="customerId" />
+        <TextField label="errorCode" source="errorCode" />
+        <TextField label="customerMobileNumber" source="customerMobileNumber" />
+        <TextField label="reqPayload" source="reqPayload" />
+        <TextField label="errorMessage" source="errorMessage" />
         <TextField label="ID" source="id" />
         <DateField source="createdAt" label="Created At" />
         <DateField source="updatedAt" label="Updated At" />
-        <TextField label="customerId" source="customerId" />
-        <TextField label="agentId" source="agentId" />
-        <TextField label="customerMobileNumber" source="customerMobileNumber" />
-        <TextField label="agentMobileNumber" source="agentMobileNumber" />
-        <TextField label="reqPayload" source="reqPayload" />
-        <TextField label="resPayload" source="resPayload" />
         <TextField label="httpStatusCode" source="httpStatusCode" />
-        <TextField label="errorCode" source="errorCode" />
-        <TextField label="errorMessage" source="errorMessage" />
       </SimpleShowLayout>
     </Show>
   );

@@ -1,17 +1,17 @@
-import { StringFilter } from "../../util/StringFilter";
 import { IntFilter } from "../../util/IntFilter";
 import { JsonFilter } from "../../util/JsonFilter";
+import { StringFilter } from "../../util/StringFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 export type KnowlarityMakeCallWhereInput = {
-  id?: StringFilter;
-  customerId?: IntFilter;
   agentId?: IntFilter;
-  customerMobileNumber?: IntFilter;
   agentMobileNumber?: IntFilter;
-  reqPayload?: JsonFilter;
   resPayload?: JsonFilter;
-  httpStatusCode?: StringNullableFilter;
+  customerId?: IntFilter;
   errorCode?: StringFilter;
+  customerMobileNumber?: IntFilter;
+  reqPayload?: JsonFilter;
   errorMessage?: StringFilter;
+  id?: StringFilter;
+  httpStatusCode?: StringNullableFilter;
 };

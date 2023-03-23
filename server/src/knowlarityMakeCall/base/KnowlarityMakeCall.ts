@@ -11,13 +11,78 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsDate, IsInt, IsJSON, IsOptional } from "class-validator";
-import { Type } from "class-transformer";
+import { IsInt, IsJSON, IsString, IsOptional, IsDate } from "class-validator";
 import { GraphQLJSON } from "graphql-type-json";
 import { JsonValue } from "type-fest";
+import { Type } from "class-transformer";
 
 @ObjectType()
 class KnowlarityMakeCall {
+  @ApiProperty({
+    required: true,
+    type: Number,
+  })
+  @IsInt()
+  @Field(() => Number)
+  agentId!: number;
+
+  @ApiProperty({
+    required: true,
+    type: Number,
+  })
+  @IsInt()
+  @Field(() => Number)
+  agentMobileNumber!: number;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsJSON()
+  @Field(() => GraphQLJSON)
+  resPayload!: JsonValue;
+
+  @ApiProperty({
+    required: true,
+    type: Number,
+  })
+  @IsInt()
+  @Field(() => Number)
+  customerId!: number;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  errorCode!: string;
+
+  @ApiProperty({
+    required: true,
+    type: Number,
+  })
+  @IsInt()
+  @Field(() => Number)
+  customerMobileNumber!: number;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsJSON()
+  @IsOptional()
+  @Field(() => GraphQLJSON, {
+    nullable: true,
+  })
+  reqPayload!: JsonValue;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  errorMessage!: string;
+
   @ApiProperty({
     required: true,
     type: String,
@@ -43,52 +108,6 @@ class KnowlarityMakeCall {
   updatedAt!: Date;
 
   @ApiProperty({
-    required: true,
-    type: Number,
-  })
-  @IsInt()
-  @Field(() => Number)
-  customerId!: number;
-
-  @ApiProperty({
-    required: true,
-    type: Number,
-  })
-  @IsInt()
-  @Field(() => Number)
-  agentId!: number;
-
-  @ApiProperty({
-    required: true,
-    type: Number,
-  })
-  @IsInt()
-  @Field(() => Number)
-  customerMobileNumber!: number;
-
-  @ApiProperty({
-    required: true,
-    type: Number,
-  })
-  @IsInt()
-  @Field(() => Number)
-  agentMobileNumber!: number;
-
-  @ApiProperty({
-    required: true,
-  })
-  @IsJSON()
-  @Field(() => GraphQLJSON)
-  reqPayload!: JsonValue;
-
-  @ApiProperty({
-    required: true,
-  })
-  @IsJSON()
-  @Field(() => GraphQLJSON)
-  resPayload!: JsonValue;
-
-  @ApiProperty({
     required: false,
     type: String,
   })
@@ -98,22 +117,6 @@ class KnowlarityMakeCall {
     nullable: true,
   })
   httpStatusCode!: string | null;
-
-  @ApiProperty({
-    required: true,
-    type: String,
-  })
-  @IsString()
-  @Field(() => String)
-  errorCode!: string;
-
-  @ApiProperty({
-    required: true,
-    type: String,
-  })
-  @IsString()
-  @Field(() => String)
-  errorMessage!: string;
 }
 
 export { KnowlarityMakeCall as KnowlarityMakeCall };

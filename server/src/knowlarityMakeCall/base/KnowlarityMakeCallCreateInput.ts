@@ -23,23 +23,7 @@ class KnowlarityMakeCallCreateInput {
   })
   @IsInt()
   @Field(() => Number)
-  customerId!: number;
-
-  @ApiProperty({
-    required: true,
-    type: Number,
-  })
-  @IsInt()
-  @Field(() => Number)
   agentId!: number;
-
-  @ApiProperty({
-    required: true,
-    type: Number,
-  })
-  @IsInt()
-  @Field(() => Number)
-  customerMobileNumber!: number;
 
   @ApiProperty({
     required: true,
@@ -54,25 +38,15 @@ class KnowlarityMakeCallCreateInput {
   })
   @IsJSON()
   @Field(() => GraphQLJSON)
-  reqPayload!: InputJsonValue;
-
-  @ApiProperty({
-    required: true,
-  })
-  @IsJSON()
-  @Field(() => GraphQLJSON)
   resPayload!: InputJsonValue;
 
   @ApiProperty({
-    required: false,
-    type: String,
+    required: true,
+    type: Number,
   })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  httpStatusCode?: string | null;
+  @IsInt()
+  @Field(() => Number)
+  customerId!: number;
 
   @ApiProperty({
     required: true,
@@ -84,11 +58,40 @@ class KnowlarityMakeCallCreateInput {
 
   @ApiProperty({
     required: true,
+    type: Number,
+  })
+  @IsInt()
+  @Field(() => Number)
+  customerMobileNumber!: number;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsJSON()
+  @IsOptional()
+  @Field(() => GraphQLJSON, {
+    nullable: true,
+  })
+  reqPayload?: InputJsonValue;
+
+  @ApiProperty({
+    required: true,
     type: String,
   })
   @IsString()
   @Field(() => String)
   errorMessage!: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  httpStatusCode?: string | null;
 }
 
 export { KnowlarityMakeCallCreateInput as KnowlarityMakeCallCreateInput };
