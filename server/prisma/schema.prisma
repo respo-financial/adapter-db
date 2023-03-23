@@ -18,161 +18,149 @@ model User {
   roles     Json
 }
 
-model UserDetail {
-  id                      String               @id @default(cuid())
-  createdAt               DateTime             @default(now())
-  updatedAt               DateTime             @updatedAt
-  userId                  String               @unique
-  isPersonalEmailVerified Boolean?
-  mobileNumber            String               @unique
-  userProvidedFirstName   String?
-  userProvidedLastName    String?
-  aadhaarName             String?
-  aadhaarDob              DateTime?
-  panName                 String?
-  pan                     String?              @unique
-  panDob                  DateTime?
-  firstName               String?
-  lastName                String?
-  personalEmail           String?              @unique
-  creditBureauDetails     CreditBureauDetail[]
-  addressDetails          AddressDetail[]
-  employmentDetails       EmploymentDetail[]
-  userOnboardingState     UserOnboardingState? @relation(fields: [userOnboardingStateId], references: [id])
-  userOnboardingStateId   String?
+model KarzaPan {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  panNumber      String
+  reqPayload     Json
+  resPayload     Json?
+  errorMessage   String?
+  httpStatusCode String?
+  errorCode      String?
+  customerId     Int      @unique
+  panName        String?
 }
 
-model UserOnboardingState {
-  isUserProvidedNameValid    Boolean?
-  id                         String                                    @id @default(cuid())
-  createdAt                  DateTime                                  @default(now())
-  updatedAt                  DateTime                                  @updatedAt
-  employmentType             EnumUserOnboardingStateEmploymentType?
-  isEmploymentEmailValidated Boolean?
-  apNameMatchStatus          EnumUserOnboardingStateApNameMatchStatus?
-  isAddressValid             Boolean?
-  dobMatchStatus             EnumUserOnboardingStateDobMatchStatus?
-  inApprovedRegion           Boolean?
-  inBlacklistedRegion        Boolean?
-  isPennytransferSuccess     Boolean?
-  isEnachCreated             Boolean?
-  isSelfieMatchSuccess       Boolean?
-  isLoanAgreementSigned      Boolean?
-  isCbSuccess                Boolean?
-  isPanValid                 Boolean?
-  l1Status                   EnumUserOnboardingStateL1Status?
-  l2Status                   EnumUserOnboardingStateL2Status?
-  combinedStatus             EnumUserOnboardingStateCombinedStatus?
-  isPersonalEmailVerified    Boolean?
-  userDetails                UserDetail[]
+model KarzaEmployment {
+  resPayload      Json
+  errorMessage    String?
+  httpStatusCode  String
+  reqPayload      Json
+  karzaStatusCode String?
+  id              String   @id @default(cuid())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  customerId      Int
+  karzaStatus     String?
 }
 
-model CreditBureauDetail {
-  provider         EnumCreditBureauDetailProvider?
-  cbReportFileName String?
-  createdAt        DateTime                        @default(now())
-  updatedAt        DateTime                        @updatedAt
-  id               String                          @id @default(cuid())
-  reportPullDate   DateTime?
-  cbUserId         String?
-  userDetail       UserDetail?                     @relation(fields: [userDetailId], references: [id])
-  userDetailId     String?
+model HyperVergeAadhaar {
+  id               String   @id @default(cuid())
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  errorMessage     String?
+  customerId       Int      @unique
+  reqPayload       Json
+  httpStatusCode   String
+  resPayload       Json?
+  adhaarNumber     String
+  errorCode        String?
+  reqType          String
+  hyperVergeStatus String?
 }
 
-model EmploymentDetail {
-  employmentVerificationProvider EnumEmploymentDetailEmploymentVerificationProvider?
-  isEmploymentEmailValid         String?
-  employmentVerificationStatus   EnumEmploymentDetailEmploymentVerificationStatus?
-  email                          String?
-  id                             String                                              @id @default(cuid())
-  createdAt                      DateTime                                            @default(now())
-  updatedAt                      DateTime                                            @updatedAt
-  companyName                    String?
-  isOthers                       Boolean?
-  userDetail                     UserDetail?                                         @relation(fields: [userDetailId], references: [id])
-  userDetailId                   String?
+model KarzaAdhaarVerify {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  customerId     Int      @unique
+  adhaarNumber   Int      @unique
+  reqPayload     Json?
+  resPayload     Json?
+  httpStatusCode Int?
 }
 
-model AddressDetail {
-  id                  String                        @id @default(cuid())
-  createdAt           DateTime                      @default(now())
-  updatedAt           DateTime                      @updatedAt
-  inBlacklistedRegion Boolean?
-  state               String?
-  country             String?
-  latitude            String?
-  longitude           String?
-  userDetail          UserDetail?                   @relation(fields: [userDetailId], references: [id])
-  userDetailId        String?
-  pincode             String?
-  addressType         EnumAddressDetailAddressType?
-  city                String?
-  addressLine         String?
-  inApprovedRegion    Boolean?
+model KarzaVerifyAdhaar {
+  errorMessage   String?
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  customerId     Int      @unique
+  adhaarNumber   Int      @unique
+  resPayload     Json?
+  httpStatusCode Int
+  reqPayload     Json
+  errorCode      String?
+  statusCode     String
+  reqType        String
 }
 
-enum EnumUserOnboardingStateEmploymentType {
-  SALARIED
-  SELF_EMPLOYED
-  STUDENT
-  PROFESSIONAL
+model HyperVergeKycFailureHistory {
+  customerId     Int?     @unique
+  reqPayload     Json?    @unique
+  id             String   @id @default(cuid())
+  resPayload     Json?    @unique
+  httpStatusCode Int      @unique
+  errorCode      Int      @unique
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  errorMessage   String
 }
 
-enum EnumUserOnboardingStateApNameMatchStatus {
-  success
-  failed
-  manual
+model HyperVergeOtp {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  customerId     Int      @unique
+  reqPayload     Json
+  resPayload     Json?
+  httpStatusCode String
+  errorCode      String?
+  errorMessage   String?
 }
 
-enum EnumUserOnboardingStateDobMatchStatus {
-  success
-  failed
-  manual
+model HyperVergeKycSuccess {
+  aadhaarNumber Int?      @unique
+  aadhaarDob    DateTime?
+  panNumber     String?   @unique
+  panDob        DateTime?
+  resPayload    Json?     @unique
+  customerId    Int?      @unique
+  id            String    @id @default(cuid())
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  mobileNumber  Int?      @unique
+  reqPayload    Json?     @unique
 }
 
-enum EnumUserOnboardingStateL1Status {
-  Accept
-  Manual
-  Waitlist
-  Fail
-  Reject
-  Refer
+model KnowlarityMakeCall {
+  id                   String   @id @default(cuid())
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  customerId           Int      @unique
+  agentId              Int      @unique
+  customerMobileNumber Int      @unique
+  agentMobileNumber    Int
+  reqPayload           Json
+  resPayload           Json
+  httpStatusCode       String?
+  errorCode            String
+  errorMessage         String
 }
 
-enum EnumUserOnboardingStateL2Status {
-  Accept
-  Manual
-  Waitlist
-  Fail
-  Reject
+model ExperianCreditBureau {
+  httpStatusCode     String?
+  errorMessage       String?
+  errorCode          String?
+  customerId         Int
+  reqPayload         Json
+  resPayload         Json?
+  id                 String   @id @default(cuid())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  reqType            String?
+  experianStatusCode String?
 }
 
-enum EnumUserOnboardingStateCombinedStatus {
-  Accept
-  Manual
-  Waitlist
-  Fail
-  Reject
-}
-
-enum EnumCreditBureauDetailProvider {
-  experian
-  equifax
-  cibil
-}
-
-enum EnumEmploymentDetailEmploymentVerificationProvider {
-  zype
-  karza
-}
-
-enum EnumEmploymentDetailEmploymentVerificationStatus {
-  verified
-  notVerified
-  Manual
-}
-
-enum EnumAddressDetailAddressType {
-  permanent
-  communication
+model CashfreePaymentGateway {
+  reqPayload     Json?
+  resPayload     Json
+  errorMessage   String
+  errorCode      String
+  customerId     Int?     @unique
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  httpStatusCode String?
 }
