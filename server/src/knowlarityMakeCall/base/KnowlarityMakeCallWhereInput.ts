@@ -11,37 +11,15 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { StringFilter } from "../../util/StringFilter";
+import { IntFilter } from "../../util/IntFilter";
 import { Type } from "class-transformer";
 import { IsOptional } from "class-validator";
-import { IntFilter } from "../../util/IntFilter";
 import { JsonFilter } from "../../util/JsonFilter";
+import { StringFilter } from "../../util/StringFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 @InputType()
 class KnowlarityMakeCallWhereInput {
-  @ApiProperty({
-    required: false,
-    type: StringFilter,
-  })
-  @Type(() => StringFilter)
-  @IsOptional()
-  @Field(() => StringFilter, {
-    nullable: true,
-  })
-  id?: StringFilter;
-
-  @ApiProperty({
-    required: false,
-    type: IntFilter,
-  })
-  @Type(() => IntFilter)
-  @IsOptional()
-  @Field(() => IntFilter, {
-    nullable: true,
-  })
-  customerId?: IntFilter;
-
   @ApiProperty({
     required: false,
     type: IntFilter,
@@ -52,17 +30,6 @@ class KnowlarityMakeCallWhereInput {
     nullable: true,
   })
   agentId?: IntFilter;
-
-  @ApiProperty({
-    required: false,
-    type: IntFilter,
-  })
-  @Type(() => IntFilter)
-  @IsOptional()
-  @Field(() => IntFilter, {
-    nullable: true,
-  })
-  customerMobileNumber?: IntFilter;
 
   @ApiProperty({
     required: false,
@@ -84,29 +51,18 @@ class KnowlarityMakeCallWhereInput {
   @Field(() => JsonFilter, {
     nullable: true,
   })
-  reqPayload?: JsonFilter;
-
-  @ApiProperty({
-    required: false,
-    type: JsonFilter,
-  })
-  @Type(() => JsonFilter)
-  @IsOptional()
-  @Field(() => JsonFilter, {
-    nullable: true,
-  })
   resPayload?: JsonFilter;
 
   @ApiProperty({
     required: false,
-    type: StringNullableFilter,
+    type: IntFilter,
   })
-  @Type(() => StringNullableFilter)
+  @Type(() => IntFilter)
   @IsOptional()
-  @Field(() => StringNullableFilter, {
+  @Field(() => IntFilter, {
     nullable: true,
   })
-  httpStatusCode?: StringNullableFilter;
+  customerId?: IntFilter;
 
   @ApiProperty({
     required: false,
@@ -121,6 +77,28 @@ class KnowlarityMakeCallWhereInput {
 
   @ApiProperty({
     required: false,
+    type: IntFilter,
+  })
+  @Type(() => IntFilter)
+  @IsOptional()
+  @Field(() => IntFilter, {
+    nullable: true,
+  })
+  customerMobileNumber?: IntFilter;
+
+  @ApiProperty({
+    required: false,
+    type: JsonFilter,
+  })
+  @Type(() => JsonFilter)
+  @IsOptional()
+  @Field(() => JsonFilter, {
+    nullable: true,
+  })
+  reqPayload?: JsonFilter;
+
+  @ApiProperty({
+    required: false,
     type: StringFilter,
   })
   @Type(() => StringFilter)
@@ -129,6 +107,28 @@ class KnowlarityMakeCallWhereInput {
     nullable: true,
   })
   errorMessage?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  id?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  httpStatusCode?: StringNullableFilter;
 }
 
 export { KnowlarityMakeCallWhereInput as KnowlarityMakeCallWhereInput };

@@ -26,29 +26,7 @@ class KnowlarityMakeCallUpdateInput {
   @Field(() => Number, {
     nullable: true,
   })
-  customerId?: number;
-
-  @ApiProperty({
-    required: false,
-    type: Number,
-  })
-  @IsInt()
-  @IsOptional()
-  @Field(() => Number, {
-    nullable: true,
-  })
   agentId?: number;
-
-  @ApiProperty({
-    required: false,
-    type: Number,
-  })
-  @IsInt()
-  @IsOptional()
-  @Field(() => Number, {
-    nullable: true,
-  })
-  customerMobileNumber?: number;
 
   @ApiProperty({
     required: false,
@@ -69,28 +47,18 @@ class KnowlarityMakeCallUpdateInput {
   @Field(() => GraphQLJSON, {
     nullable: true,
   })
-  reqPayload?: InputJsonValue;
-
-  @ApiProperty({
-    required: false,
-  })
-  @IsJSON()
-  @IsOptional()
-  @Field(() => GraphQLJSON, {
-    nullable: true,
-  })
   resPayload?: InputJsonValue;
 
   @ApiProperty({
     required: false,
-    type: String,
+    type: Number,
   })
-  @IsString()
+  @IsInt()
   @IsOptional()
-  @Field(() => String, {
+  @Field(() => Number, {
     nullable: true,
   })
-  httpStatusCode?: string | null;
+  customerId?: number;
 
   @ApiProperty({
     required: false,
@@ -105,6 +73,27 @@ class KnowlarityMakeCallUpdateInput {
 
   @ApiProperty({
     required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  customerMobileNumber?: number;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsJSON()
+  @IsOptional()
+  @Field(() => GraphQLJSON, {
+    nullable: true,
+  })
+  reqPayload?: InputJsonValue;
+
+  @ApiProperty({
+    required: false,
     type: String,
   })
   @IsString()
@@ -113,6 +102,17 @@ class KnowlarityMakeCallUpdateInput {
     nullable: true,
   })
   errorMessage?: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  httpStatusCode?: string | null;
 }
 
 export { KnowlarityMakeCallUpdateInput as KnowlarityMakeCallUpdateInput };
