@@ -2,6 +2,12 @@
   {
     "role": "user",
     "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "User",
     "action": "create:any",
     "attributes": "*"
   },
@@ -14,12 +20,6 @@
   {
     "role": "user",
     "resource": "User",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "User",
     "action": "delete:any",
     "attributes": "*"
   },
@@ -31,331 +31,121 @@
   },
   {
     "role": "user",
-    "resource": "KarzaPan",
+    "resource": "Order",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaPan",
+    "resource": "Order",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaPan",
+    "resource": "Order",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaPan",
+    "resource": "Order",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaPan",
+    "resource": "Order",
     "action": "read:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaEmployment",
+    "resource": "Customer",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaEmployment",
+    "resource": "Customer",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaEmployment",
+    "resource": "Customer",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaEmployment",
+    "resource": "Customer",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaEmployment",
+    "resource": "Customer",
     "action": "read:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "HyperVergeAadhaar",
+    "resource": "Address",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "HyperVergeAadhaar",
+    "resource": "Address",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "HyperVergeAadhaar",
+    "resource": "Address",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "HyperVergeAadhaar",
+    "resource": "Address",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "HyperVergeAadhaar",
+    "resource": "Address",
     "action": "read:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaAdhaarVerify",
+    "resource": "Product",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaAdhaarVerify",
+    "resource": "Product",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaAdhaarVerify",
+    "resource": "Product",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaAdhaarVerify",
+    "resource": "Product",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "KarzaAdhaarVerify",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaVerifyAdhaar",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaVerifyAdhaar",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaVerifyAdhaar",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaVerifyAdhaar",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KarzaVerifyAdhaar",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeKycFailureHistory",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeKycFailureHistory",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeKycFailureHistory",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeKycFailureHistory",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeKycFailureHistory",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeOtp",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeOtp",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeOtp",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeOtp",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeOtp",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeKycSuccess",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeKycSuccess",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeKycSuccess",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeKycSuccess",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HyperVergeKycSuccess",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KnowlarityMakeCall",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KnowlarityMakeCall",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KnowlarityMakeCall",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KnowlarityMakeCall",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "KnowlarityMakeCall",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "ExperianCreditBureau",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "ExperianCreditBureau",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "ExperianCreditBureau",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "ExperianCreditBureau",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "ExperianCreditBureau",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "CashfreePaymentGateway",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "CashfreePaymentGateway",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "CashfreePaymentGateway",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "CashfreePaymentGateway",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "CashfreePaymentGateway",
+    "resource": "Product",
     "action": "read:any",
     "attributes": "*"
   }
